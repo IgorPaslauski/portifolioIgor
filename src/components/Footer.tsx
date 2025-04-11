@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-gray-900 text-white dark:bg-gray-950 pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
@@ -17,16 +17,16 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
+            <a href="#" className="bg-gray-800 dark:bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
               <Github className="h-5 w-5" />
             </a>
-            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
+            <a href="#" className="bg-gray-800 dark:bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
+            <a href="#" className="bg-gray-800 dark:bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
+            <a href="#" className="bg-gray-800 dark:bg-gray-800 p-2 rounded-full hover:bg-portfolio-purple transition-colors">
               <Mail className="h-5 w-5" />
             </a>
           </div>

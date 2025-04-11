@@ -67,6 +67,12 @@ export default {
 					purple: '#8B5CF6',
 					'light-purple': '#D6BCFA',
 					'dark-purple': '#6E59A5',
+				},
+				dark: {
+					background: '#121212',
+					card: '#1E1E1E',
+					muted: '#2D2D2D',
+					border: '#3E3E3E',
 				}
 			},
 			borderRadius: {
