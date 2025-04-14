@@ -57,7 +57,7 @@ const ExperienceSection = () => {
             Minha <span className="gradient-text">Experiência</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Minha trajetória profissional como desenvolvedora e as empresas com
+            Minha trajetória profissional como desenvolvedor e as empresas com
             as quais colaborei.
           </p>
         </div>

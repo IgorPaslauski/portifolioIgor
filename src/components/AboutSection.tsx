@@ -10,7 +10,7 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           <h2 className="mb-4">Sobre <span className="gradient-text">Mim</span></h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Conheça um pouco mais sobre minha jornada como desenvolvedora e o que me motiva a criar soluções através da tecnologia.
+            Conheça um pouco mais sobre minha jornada como desenvolvedor e o que me motiva a criar soluções através da tecnologia.
           </p>
         </div>
 
@@ -18,7 +18,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <h3>Minha História</h3>
             <p className="text-gray-700">
-              Sou uma desenvolvedora full stack apaixonada por criar soluções digitais que fazem a diferença. 
+              Sou uma desenvolvedor full stack apaixonada por criar soluções digitais que fazem a diferença. 
               Minha jornada na programação começou há 5 anos, quando descobri o poder de transformar ideias em código.
             </p>
             <p className="text-gray-700">
