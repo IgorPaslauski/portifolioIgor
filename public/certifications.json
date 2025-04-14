@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "AWS Certified Developer - Associate",
+    "issuer": "Amazon Web Services",
+    "date": "Dezembro 2023",
+    "description": "Certificação que valida conhecimentos em desenvolvimento e manutenção de aplicações na AWS.",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Professional Full Stack Engineer",
+    "issuer": "Meta",
+    "date": "Agosto 2023",
+    "description": "Especialização avançada em desenvolvimento full stack utilizando React, Node.js e práticas modernas.",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Google Cloud Professional Developer",
+    "issuer": "Google",
+    "date": "Março 2023",
+    "description": "Certificação que valida experiência em desenvolver e implantar aplicações na Google Cloud.",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Machine Learning Specialization",
+    "issuer": "Stanford University (Coursera)",
+    "date": "Outubro 2022",
+    "description": "Curso avançado de Machine Learning cobrindo algoritmos, redes neurais e aplicações práticas.",
+    "link": "#"
+  }
+]

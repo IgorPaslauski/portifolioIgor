@@ -1,70 +1,66 @@
-
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-
-const skillCategories = [
-  {
-    id: 'frontend',
-    title: 'Frontend',
-    description: 'Tecnologias e frameworks para desenvolvimento de interfaces modernas',
-    skills: [
-      { name: 'React', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'Next.js', level: 85 },
-      { name: 'HTML/CSS', level: 95 },
-      { name: 'Tailwind CSS', level: 90 },
-      { name: 'Vue.js', level: 80 },
-    ]
-  },
-  {
-    id: 'backend',
-    title: 'Backend',
-    description: 'Linguagens e frameworks para desenvolvimento de APIs e serviços',
-    skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Express', level: 88 },
-      { name: 'Python', level: 75 },
-      { name: 'Django', level: 70 },
-      { name: 'Java', level: 65 },
-      { name: 'PHP', level: 60 },
-    ]
-  },
-  {
-    id: 'database',
-    title: 'Banco de Dados',
-    description: 'Tecnologias de armazenamento e gerenciamento de dados',
-    skills: [
-      { name: 'MongoDB', level: 85 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MySQL', level: 75 },
-      { name: 'Redis', level: 70 },
-      { name: 'Firebase', level: 85 },
-    ]
-  },
-  {
-    id: 'tools',
-    title: 'Ferramentas & DevOps',
-    description: 'Ferramentas para produtividade e implantação de aplicações',
-    skills: [
-      { name: 'Git', level: 90 },
-      { name: 'Docker', level: 80 },
-      { name: 'CI/CD', level: 85 },
-      { name: 'AWS', level: 80 },
-      { name: 'Google Cloud', level: 75 },
-      { name: 'Jest/Testing', level: 85 },
-    ]
-  }
-];
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { useEffect, useState } from "react";
 
 const SkillsSection = () => {
+  const [skillCategories, setSkillCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:8080/skills.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setSkillCategories(data);
+      })
+      .catch((error) => console.error("Error fetching skills:", error))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  if(loading) {
+    return (
+      <section id="skills" className="bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="mb-4">
+              Minhas <span className="gradient-text">Habilidades</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto animate-pulse bg-gray-200 rounded h-6 w-1/2"></p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {Array(4)
+              .fill(0)
+              .map((_, index) => (
+                <Card
+                  key={index}
+                  className="card-hover animate-pulse bg-gray-200 rounded h-48"
+                ></Card>
+              ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="skills" className="bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Minhas <span className="gradient-text">Habilidades</span></h2>
+          <h2 className="mb-4">
+            Minhas <span className="gradient-text">Habilidades</span>
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Tecnologias e ferramentas com as quais tenho experiência e competência.
+            Tecnologias e ferramentas com as quais tenho experiência e
+            competência.
           </p>
         </div>
 

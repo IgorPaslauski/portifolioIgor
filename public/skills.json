@@ -1,0 +1,53 @@
+[
+  {
+    "id": "frontend",
+    "title": "Frontend",
+    "description": "Tecnologias e frameworks para desenvolvimento de interfaces modernas",
+    "skills": [
+      { "name": "React", "level": 95 },
+      { "name": "TypeScript", "level": 90 },
+      { "name": "Next.js", "level": 85 },
+      { "name": "HTML/CSS", "level": 95 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Vue.js", "level": 80 }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Backend",
+    "description": "Linguagens e frameworks para desenvolvimento de APIs e serviços",
+    "skills": [
+      { "name": "Node.js", "level": 90 },
+      { "name": "Express", "level": 88 },
+      { "name": "Python", "level": 75 },
+      { "name": "Django", "level": 70 },
+      { "name": "Java", "level": 65 },
+      { "name": "PHP", "level": 60 }
+    ]
+  },
+  {
+    "id": "database",
+    "title": "Banco de Dados",
+    "description": "Tecnologias de armazenamento e gerenciamento de dados",
+    "skills": [
+      { "name": "MongoDB", "level": 85 },
+      { "name": "PostgreSQL", "level": 80 },
+      { "name": "MySQL", "level": 75 },
+      { "name": "Redis", "level": 70 },
+      { "name": "Firebase", "level": 85 }
+    ]
+  },
+  {
+    "id": "tools",
+    "title": "Ferramentas & DevOps",
+    "description": "Ferramentas para produtividade e implantação de aplicações",
+    "skills": [
+      { "name": "Git", "level": 90 },
+      { "name": "Docker", "level": 80 },
+      { "name": "CI/CD", "level": 85 },
+      { "name": "AWS", "level": 80 },
+      { "name": "Google Cloud", "level": 75 },
+      { "name": "Jest/Testing", "level": 85 }
+    ]
+  }
+]
