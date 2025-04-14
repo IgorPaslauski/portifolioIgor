@@ -14,7 +14,7 @@ const SkillsSection = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:8080/skills.json")
+    fetch("/skills.json")
       .then((response) => response.json())
       .then((data) => {
         setSkillCategories(data);

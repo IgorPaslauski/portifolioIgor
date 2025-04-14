@@ -13,7 +13,7 @@ const CertificationsSection = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:8080/certifications.json")
+    fetch("/certifications.json")
       .then((response) => response.json())
       .then((data) => {
         setCertifications(data);
