@@ -16,7 +16,7 @@ const ProjectsSection = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/projects.json")
+    fetch("/portifolioIgor/projects.json")
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);

@@ -13,7 +13,7 @@ const CertificationsSection = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("/certifications.json")
+    fetch("/portifolioIgor/certifications.json")
       .then((response) => response.json())
       .then((data) => {
         setCertifications(data);

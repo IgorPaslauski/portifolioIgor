@@ -14,7 +14,7 @@ const SkillsSection = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/skills.json")
+    fetch("/portifolioIgor/skills.json")
       .then((response) => response.json())
       .then((data) => {
         setSkillCategories(data);

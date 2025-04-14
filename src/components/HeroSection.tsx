@@ -26,7 +26,7 @@ const HeroSection = () => {
                 Ver Projetos
               </Button>
               <a
-                href="/cv-igor-paslauski.pdf"
+                href="/portifolioIgor/cv-igor-paslauski.pdf"
                 download="cv-igor-paslauski.pdf"
                 className="inline-block border border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white px-4 py-2 rounded-md text-center"
               >
@@ -75,7 +75,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-8 -right-8 w-72 h-72 bg-portfolio-blue rounded-full opacity-20 filter blur-3xl dark:bg-portfolio-dark-blue"></div>
               <div className="relative z-10 bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900">
                 <img
-                  src="/image-profile.png"
+                  src="/portifolioIgor/image-profile.png"
                   alt="Igor Paslauski - Desenvolvedor Full Stack"
                   className="w-full h-auto object-cover"
                 />
