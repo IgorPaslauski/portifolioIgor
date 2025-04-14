@@ -1,34 +1,58 @@
 [
   {
     "id": 1,
-    "title": "AWS Certified Developer - Associate",
-    "issuer": "Amazon Web Services",
-    "date": "Dezembro 2023",
-    "description": "Certificação que valida conhecimentos em desenvolvimento e manutenção de aplicações na AWS.",
-    "link": "#"
+    "title": "Testes unitários C#",
+    "issuer": "DIO",
+    "date": "Dezembro 2024",
+    "description": "Certificação em testes unitários com C#, abordando práticas e ferramentas para garantir a qualidade do código.",
+    "link": "https://drive.google.com/file/d/1MhhVR61U_dzC92zFtrkfk5IsjLSaDFVu/view?usp=sharing"
   },
   {
     "id": 2,
-    "title": "Professional Full Stack Engineer",
-    "issuer": "Meta",
-    "date": "Agosto 2023",
-    "description": "Especialização avançada em desenvolvimento full stack utilizando React, Node.js e práticas modernas.",
-    "link": "#"
+    "title": "Arquitetura de Software: Introdução ao Desenvolvimento de Sistemas Sustentáveis",
+    "issuer": "LinkedIn",
+    "date": "Março 2023",
+    "description": "Certificação em Arquitetura de Software, abordando princípios e práticas para o desenvolvimento de sistemas sustentáveis.",
+    "link": "https://www.linkedin.com/learning/certificates/464b196d8008174c20e0b93af86364de3bbdba103c23bb1dbc64ca231772e8bf"
   },
   {
     "id": 3,
-    "title": "Google Cloud Professional Developer",
-    "issuer": "Google",
+    "title": "Desenvolvimento de Software Remoto: Como Aumentar sua Produtividade",
+    "issuer": "LinkedIn",
     "date": "Março 2023",
-    "description": "Certificação que valida experiência em desenvolver e implantar aplicações na Google Cloud.",
-    "link": "#"
+    "description": "Certificação em Desenvolvimento de Software Remoto, abordando técnicas e ferramentas para aumentar a produtividade em ambientes remotos.",
+    "link": "https://www.linkedin.com/learning/certificates/bbca635244c2b2237dcfb0552d2ef2d0dd6b6e2a83a86877f2a2ddcae85f0bdd"
   },
   {
     "id": 4,
-    "title": "Machine Learning Specialization",
-    "issuer": "Stanford University (Coursera)",
-    "date": "Outubro 2022",
-    "description": "Curso avançado de Machine Learning cobrindo algoritmos, redes neurais e aplicações práticas.",
-    "link": "#"
+    "title": "Descubra o CSS",
+    "issuer": "LinkedIn",
+    "date": "Janeiro 2022",
+    "description": "Certificação em CSS, abordando os fundamentos e técnicas avançadas para estilização de páginas web.",
+    "link": "https://www.linkedin.com/learning/certificates/20f7fd77c4a1549d73ae525d6e63aca9c48cb0badb0df1777e1964e36d65d91e"
+  },
+  {
+    "id": 5,
+    "title": "Git e GitHub: Formação Básica",
+    "issuer": "LinkedIn",
+    "date": "Dezembro 2022",
+    "description": "Certificação em Git e GitHub, abordando os fundamentos do controle de versão e colaboração em projetos de software.",
+    "link": "https://www.linkedin.com/learning/certificates/ffd4fe7fbff53f0d171bcbcfc4f4c0c6586ce7821ba1ef830d240f306c7d2756"
+  },
+  {
+    "id": 6,
+    "title": "CTO Summit",
+    "issuer": "CTO Summit",
+    "date": "Novembro 2022",
+    "description": "Certificação em CTO Summit, abordando tendências e práticas de liderança em tecnologia.",
+    "link": "https://platform.app.td/api/certificate/62d7308b0caa510008915372/635cb552fcfca300087b448b.pdf?_=MjAyMi0xMS0xMVQyMDo1ODozMC4xMjVa"
+  },
+  {
+    "id": 7,
+    "title": "Teste JavaScript",
+    "issuer": "NerdIn Vagas de TI",
+    "date": "Janeiro 2022",
+    "description": "Certificação em Teste JavaScript, abordando os fundamentos e técnicas de teste em aplicações JavaScript.",
+    "link": "https://drive.google.com/file/d/1qi1WLC5d134dTI4Bne_B9cAT928aZWmk/view?usp=sharing"
   }
 ]
