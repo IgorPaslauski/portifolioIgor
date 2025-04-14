@@ -118,10 +118,10 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-portfolio-purple to-portfolio-dark-purple bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-portfolio-blue to-portfolio-dark-blue bg-clip-text text-transparent;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-purple-500/10;
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-blue-500/10;
   }
 }

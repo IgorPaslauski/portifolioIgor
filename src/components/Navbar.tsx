@@ -28,13 +28,13 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Home</button>
-          <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Sobre</button>
-          <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Projetos</button>
-          <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Experiência</button>
-          <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Certificações</button>
-          <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Habilidades</button>
-          <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition">Contato</button>
+          <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Home</button>
+          <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Sobre</button>
+          <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Projetos</button>
+          <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Experiência</button>
+          <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Certificações</button>
+          <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Habilidades</button>
+          <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Contato</button>
           <ThemeToggle />
         </div>
         
@@ -51,13 +51,13 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 py-4 px-4 shadow-md">
           <div className="flex flex-col space-y-4">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Home</button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Sobre</button>
-            <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Projetos</button>
-            <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Experiência</button>
-            <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Certificações</button>
-            <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Habilidades</button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-purple transition py-2">Contato</button>
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Home</button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Sobre</button>
+            <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Projetos</button>
+            <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Experiência</button>
+            <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Certificações</button>
+            <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Habilidades</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Contato</button>
           </div>
         </div>
       )}

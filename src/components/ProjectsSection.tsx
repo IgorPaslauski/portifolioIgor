@@ -86,7 +86,7 @@ const ProjectsSection = () => {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="bg-portfolio-light-purple/30 text-portfolio-purple"
+                      className="bg-portfolio-light-blue/30 text-portfolio-blue"
                     >
                       {tag}
                     </Badge>
@@ -97,7 +97,7 @@ const ProjectsSection = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-portfolio-purple"
+                  className="text-portfolio-blue"
                   asChild
                 >
                   <a
@@ -112,7 +112,7 @@ const ProjectsSection = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-portfolio-purple"
+                  className="text-portfolio-blue"
                   asChild
                 >
                   <a
@@ -132,7 +132,7 @@ const ProjectsSection = () => {
         <div className="text-center mt-12">
           <Button
             variant="outline"
-            className="border-portfolio-purple text-portfolio-purple hover:bg-portfolio-purple hover:text-white"
+            className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white"
           >
             Ver Todos os Projetos
           </Button>

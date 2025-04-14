@@ -71,7 +71,7 @@ const CertificationsSection = () => {
                     </CardTitle>
                     <CardDescription>{certification.issuer}</CardDescription>
                   </div>
-                  <Award className="h-8 w-8 text-portfolio-purple" />
+                  <Award className="h-8 w-8 text-portfolio-blue" />
                 </div>
               </CardHeader>
               <CardContent>
@@ -85,7 +85,7 @@ const CertificationsSection = () => {
                   </div>
                   <a
                     href={certification.link}
-                    className="text-portfolio-purple flex items-center text-sm hover:underline"
+                    className="text-portfolio-blue flex items-center text-sm hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
