@@ -1,14 +1,13 @@
-
-import React from 'react';
-import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ProjectsSection from '../components/ProjectsSection';
-import ExperienceSection from '../components/ExperienceSection';
-import CertificationsSection from '../components/CertificationsSection';
-import SkillsSection from '../components/SkillsSection';
-import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
+import React from "react";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/AboutSection";
+import ProjectsSection from "../components/projects/ProjectsSection";
+import ExperienceSection from "../components/experience/ExperienceSection";
+import CertificationsSection from "../components/certifications/CertificationsSection";
+import SkillsSection from "../components/skills/SkillsSection";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (

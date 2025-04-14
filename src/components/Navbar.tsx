@@ -1,8 +1,7 @@
-
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ThemeToggle from './ThemeToggle';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +13,7 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -25,39 +24,108 @@ const Navbar = () => {
         <div className="flex items-center">
           <span className="text-xl font-bold gradient-text">Igor.dev</span>
         </div>
-        
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Home</button>
-          <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Sobre</button>
-          <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Projetos</button>
-          <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Experiência</button>
-          <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Certificações</button>
-          <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Habilidades</button>
-          <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition">Contato</button>
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => scrollToSection("about")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Sobre
+          </button>
+          <button
+            onClick={() => scrollToSection("projects")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Projetos
+          </button>
+          <button
+            onClick={() => scrollToSection("experience")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Experiência
+          </button>
+          <button
+            onClick={() => scrollToSection("certifications")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Certificações
+          </button>
+          <button
+            onClick={() => scrollToSection("skills")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Habilidades
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition"
+          >
+            Contato
+          </button>
           <ThemeToggle />
         </div>
-        
-        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Menu">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleMenu}
+            aria-label="Menu"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
         </div>
       </div>
-      
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 py-4 px-4 shadow-md">
           <div className="flex flex-col space-y-4">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Home</button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Sobre</button>
-            <button onClick={() => scrollToSection('projects')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Projetos</button>
-            <button onClick={() => scrollToSection('experience')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Experiência</button>
-            <button onClick={() => scrollToSection('certifications')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Certificações</button>
-            <button onClick={() => scrollToSection('skills')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Habilidades</button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2">Contato</button>
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Sobre
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Projetos
+            </button>
+            <button
+              onClick={() => scrollToSection("experience")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Experiência
+            </button>
+            <button
+              onClick={() => scrollToSection("certifications")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Certificações
+            </button>
+            <button
+              onClick={() => scrollToSection("skills")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Habilidades
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-blue transition py-2"
+            >
+              Contato
+            </button>
           </div>
         </div>
       )}
