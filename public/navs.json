@@ -1,0 +1,9 @@
+[
+    { "id": "home", "label": "Home" },
+    { "id": "about", "label": "Sobre" },
+    { "id": "projects", "label": "Projetos" },
+    { "id": "experience", "label": "Experiência" },
+    { "id": "certifications", "label": "Certificações" },
+    { "id": "skills", "label": "Habilidades" },
+    { "id": "contact", "label": "Contato" }
+  ]
