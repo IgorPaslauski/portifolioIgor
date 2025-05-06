@@ -13,12 +13,21 @@ export interface PostProps {
     pubDate: string;
     categories: string[];
     link: string;
+    image?: string;
 }
 
-const PostCard = ({ id, title, description, pubDate, categories, link }: PostProps) => {
+const PostCard = ({ id, title, description, pubDate, categories, link, image }: PostProps) => {
+    image = image || (import.meta.env.VITE_API_URL + "/post-placeholder.png");
     return (
         <Card key={id} className="card-hover dark:bg-gray-900 dark:border-gray-700">
             <CardHeader>
+                <div className="mb-4">
+                    <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-auto rounded-lg object-cover max-h-80 mx-auto"
+                    />
+                </div>
                 <CardTitle>
                     <a
                         href={link}

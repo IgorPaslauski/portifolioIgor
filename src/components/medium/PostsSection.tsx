@@ -10,6 +10,7 @@ export interface PostDto {
   pubDate: string;
   categories: string[];
   link: string;
+  image?: string;
 }
 
 const PostsSection = () => {
@@ -44,6 +45,7 @@ const PostsSection = () => {
           }),
           categories: item.categories || [],
           link: item.link || "#",
+          image: item.description.match(/<img[^>]+src="([^">]+)"/)?.[1] || "",
         }));
 
         setPosts(formattedPosts);
