@@ -20,51 +20,31 @@ const PostsSection = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const proxyUrl = "https://api.allorigins.win/raw?url=";
-        const feedUrl = "https://medium.com/feed/@igor.pedroso123";
-        const response = await fetch(`${proxyUrl}${encodeURIComponent(feedUrl)}`,
-          {
-            headers: {
-              'Origin': 'https://igorpaslauski.github.io/portifolioIgor'
-            },
-          });
+        const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@igor.pedroso123";
+        const response = await fetch(apiUrl);
         if (!response.ok) {
-          throw new Error("Failed to fetch RSS feed");
+          throw new Error("Failed to fetch posts");
         }
-        const xmlText = await response.text();
+        const data = await response.json();
 
-        // Parse XML using DOMParser
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-        const items = xmlDoc.querySelectorAll("item");
+        if (data.status !== "ok") {
+          throw new Error("API response status is not ok");
+        }
 
-        const formattedPosts: PostDto[] = Array.from(items).map((item, index) => {
-          const title = item.querySelector("title")?.textContent || "Untitled";
-          const link = item.querySelector("link")?.textContent || "#";
-          const pubDate = item.querySelector("pubDate")?.textContent || "";
-          const guid = item.querySelector("guid")?.textContent || `post-${index}`;
-          const contentElement = Array.from(item.children).find(
-            (child) => child.tagName === "content:encoded"
-          );
-          const content = contentElement?.textContent || "";
-          const categories = Array.from(item.querySelectorAll("category")).map(
-            (cat) => cat.textContent || ""
-          );
-
-          return {
-            id: guid,
-            title,
-            description:
-              content.replace(/<[^>]+>/g, "").slice(0, 200) + "...", // Remove HTML tags, limit to 200 chars
-            pubDate: new Date(pubDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }),
-            categories,
-            link,
-          };
-        });
+        const formattedPosts: PostDto[] = data.items.map((item: any) => ({
+          id: item.guid || `post-${item.link}`,
+          title: item.title || "Sem título",
+          description: item.description
+            ? item.description.replace(/<[^>]+>/g, "").slice(0, 200) + "..."
+            : "Sem descrição",
+          pubDate: new Date(item.pubDate).toLocaleDateString("pt-BR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          categories: item.categories || [],
+          link: item.link || "#",
+        }));
 
         setPosts(formattedPosts);
         setLoading(false);
@@ -78,13 +58,13 @@ const PostsSection = () => {
   }, []);
 
   return (
-    <section id="posts" className="bg-secondary/50 py-16 md:py-24">
+    <section id="posts" className="bg-secondary/50 dark:bg-gray-900 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="mb-4">
+          <h2 className="mb-4 text-black dark:text-white">
             Meus <span className="gradient-text">Artigos</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Artigos técnicos publicados no Medium sobre programação e desenvolvimento.
           </p>
         </div>
@@ -95,7 +75,7 @@ const PostsSection = () => {
               .fill(0)
               .map((_, index) => <PostCardSkeleton key={index} />)
           ) : error ? (
-            <div className="text-center py-8 text-red-500 col-span-2">{error}</div>
+            <div className="text-center py-8 text-red-500 dark:text-red-400 col-span-2">{error}</div>
           ) : (
             posts.map((post) => <PostCard key={post.id} {...post} />)
           )}
