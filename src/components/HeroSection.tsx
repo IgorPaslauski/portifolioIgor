@@ -73,11 +73,11 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-72 h-72 bg-primary/20 rounded-full opacity-30 filter blur-3xl dark:bg-primary/10"></div>
               <div className="absolute -bottom-8 -right-8 w-72 h-72 bg-primary/10 rounded-full opacity-20 filter blur-3xl dark:bg-primary/05"></div>
-              <div className="relative z-10 bg-card shadow-xl rounded-2xl overflow-hidden border border-border dark:shadow-dark-background">
+              <div className="relative z-10 bg-card rounded-2xl overflow-hidden dark:shadow-dark-background">
                 <img
-                  src={import.meta.env.VITE_API_URL + "/image-profile.png"}
+                  src={import.meta.env.VITE_API_URL + "/perfil.jpg"}
                   alt="Igor Paslauski - Desenvolvedor Full Stack"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover rounded-full"
                 />
               </div>
             </div>
