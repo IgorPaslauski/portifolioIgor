@@ -21,7 +21,7 @@ const CertificationsSection = () => {
   }, []);
 
   return (
-    <section id="certifications">
+    <section id="certifications" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-4">

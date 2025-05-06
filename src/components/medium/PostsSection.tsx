@@ -22,26 +22,49 @@ const PostsSection = () => {
       try {
         const proxyUrl = "https://api.allorigins.win/raw?url=";
         const feedUrl = "https://medium.com/feed/@igor.pedroso123";
-        const response = await fetch(`${proxyUrl}${encodeURIComponent(feedUrl)}`);
+        const response = await fetch(`${proxyUrl}${encodeURIComponent(feedUrl)}`,
+          {
+            headers: {
+              'Origin': 'https://igorpaslauski.github.io/portifolioIgor'
+            },
+          });
+        if (!response.ok) {
+          throw new Error("Failed to fetch RSS feed");
+        }
         const xmlText = await response.text();
-        const parsedData = await parseStringPromise(xmlText);
-        const items = parsedData.rss.channel[0].item || [];
 
-        const formattedPosts = items.map((item: any, index: number) => ({
-          id: item.guid[0]["_"],
-          title: item.title[0],
-          description:
-            item["content:encoded"][0]
-              .replace(/<[^>]+>/g, "") // Remove HTML tags
-              .slice(0, 200) + "...", // Limit to 200 characters
-          pubDate: new Date(item.pubDate[0]).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }),
-          categories: item.category || [],
-          link: item.link[0],
-        }));
+        // Parse XML using DOMParser
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+        const items = xmlDoc.querySelectorAll("item");
+
+        const formattedPosts: PostDto[] = Array.from(items).map((item, index) => {
+          const title = item.querySelector("title")?.textContent || "Untitled";
+          const link = item.querySelector("link")?.textContent || "#";
+          const pubDate = item.querySelector("pubDate")?.textContent || "";
+          const guid = item.querySelector("guid")?.textContent || `post-${index}`;
+          const contentElement = Array.from(item.children).find(
+            (child) => child.tagName === "content:encoded"
+          );
+          const content = contentElement?.textContent || "";
+          const categories = Array.from(item.querySelectorAll("category")).map(
+            (cat) => cat.textContent || ""
+          );
+
+          return {
+            id: guid,
+            title,
+            description:
+              content.replace(/<[^>]+>/g, "").slice(0, 200) + "...", // Remove HTML tags, limit to 200 chars
+            pubDate: new Date(pubDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }),
+            categories,
+            link,
+          };
+        });
 
         setPosts(formattedPosts);
         setLoading(false);
@@ -55,7 +78,7 @@ const PostsSection = () => {
   }, []);
 
   return (
-    <section id="posts" className="bg-secondary/50">
+    <section id="posts" className="bg-secondary/50 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-4">

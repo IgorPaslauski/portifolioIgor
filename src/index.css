@@ -95,10 +95,6 @@
   h3 {
     @apply text-2xl sm:text-3xl;
   }
-
-  section {
-    @apply py-16 md:py-24;
-  }
 }
 
 @layer components {

@@ -3,7 +3,7 @@ import { Code, LucideGraduationCap, Coffee } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-secondary/50 dark:bg-secondary/30">
+    <section id="about" className="bg-secondary/50 py-16 md:py-24 dark:bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-4">

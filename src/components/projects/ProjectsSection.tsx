@@ -22,7 +22,7 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section id="projects" className="bg-background dark:bg-dark-background py-16">
+    <section id="projects" className="bg-background py-16 md:py-24 dark:bg-dark-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="mb-4 text-foreground">
