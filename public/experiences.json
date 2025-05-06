@@ -1,56 +1,47 @@
 [
     {
         "id": 1,
-        "role": "Senior Frontend Developer",
-        "company": "TechCorp Solutions",
-        "period": "Jan 2022 - Presente",
-        "description": "Liderança na criação de aplicações web responsivas e de alta performance utilizando React e TypeScript. Implementação de testes automatizados e otimização de performance.",
+        "role": "Desenvolvedor Web Pleno",
+        "company": "Abase Sistemas e Soluções",
+        "period": "Nov 2022 - Presente",
+        "description": "Desenvolvimento de aplicações web utilizando tecnologias como HTML, CSS, JavaScript, TypeScript, Angular, PostgreSQL, Sybase, entre outras.",
         "achievements": [
-            "Reduzi o tempo de carregamento das páginas em 40%",
-            "Implementei sistema de CI/CD que diminuiu bugs em produção em 30%",
-            "Mentoria para desenvolvedores junior e pleno da equipe"
+            "Responsável por desenvolverecuidar do sistema contábil da solução, além da realização de codereview e gerenciamento de backlog",
+            "Realizei conversões de base dados para integrar coma solução da empresa",
+            "Criei sistemas de integração comAPIs governamental(REINF)",
+            "Ataulizei o sistema de Angular 6 para Angular 15",
+            "Melhorei o processo de geração do arquivo do PADdas prefeituras para gerar em 2 minutos no sistema"
         ],
         "technologies": [
-            "React",
+            "C#",
             "TypeScript",
-            "GraphQL",
-            "Jest"
+            "Angular",
+            "ExtJS",
+            "Sybase",
+            "PostgreSQL",
+            "ElasticSearch",
+            "Grafana"
         ]
     },
     {
         "id": 2,
-        "role": "Full Stack Developer",
-        "company": "Innovate Digital",
-        "period": "Mar 2020 - Dez 2021",
-        "description": "Desenvolvimento de aplicações web completas, atuando tanto no frontend quanto no backend. Construção de APIs RESTful e integração com serviços de terceiros.",
+        "role": "Programador JR",
+        "company": "Tecnicon Sistemas Gerenciais",
+        "period": "Jan 2021 - Out 2022",
+        "description": "Desenvolvimento de sistemas ERP utilizando tecnologias como Java, EJb, HTML/CSS, JavaScript, Sql Server, Firbird, entre outras.",
         "achievements": [
-            "Desenvolvi portal de clientes que aumentou a retenção em 25%",
-            "Implementei sistema de notificações em tempo real",
-            "Migração de arquitetura monolítica para microserviços"
+            "Construí uma ferramenta de gerenciamento de Smart TVs remotamente e integrado com o sistema para uso interno",
+            "Otimização de processos com transferencia de estoque de produto entre filiais, com uma redução de 2hrs de processamento para 3 minutos",
+            "Criação emanutenção do sistema de Kanban da empresa, para uso interno e externo"
         ],
         "technologies": [
-            "Node.js",
-            "Express",
-            "React",
-            "MongoDB"
-        ]
-    },
-    {
-        "id": 3,
-        "role": "Web Developer",
-        "company": "CreativeLab Agency",
-        "period": "Jun 2018 - Fev 2020",
-        "description": "Desenvolvimento de websites e landing pages para diversos clientes, com foco em design responsivo e otimização para mecanismos de busca.",
-        "achievements": [
-            "Desenvolvi mais de 20 sites para clientes de diferentes setores",
-            "Implementei estratégias de SEO que aumentaram o tráfego em 60%",
-            "Criei sistema de gerenciamento de conteúdo personalizado"
-        ],
-        "technologies": [
-            "JavaScript",
+            "Java",
+            "EJb",
             "HTML/CSS",
-            "WordPress",
-            "PHP"
+            "JavaScript",
+            "Sql Server",
+            "Firbird",
+            "CI/CD"
         ]
     }
 ]

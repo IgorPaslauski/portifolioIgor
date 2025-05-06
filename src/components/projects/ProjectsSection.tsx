@@ -22,13 +22,13 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section id="projects">
+    <section id="projects" className="bg-background dark:bg-dark-background py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="mb-4">
+          <h2 className="mb-4 text-foreground">
             <span className="gradient-text">Projetos</span> Destacados
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Uma seleção dos meus trabalhos mais recentes, apresentando diversos
             tipos de aplicações e tecnologias.
           </p>
@@ -37,17 +37,17 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading
             ? Array(4)
-                .fill(0)
-                .map((_, index) => <ProjectCardSkeleton key={index} />)
+              .fill(0)
+              .map((_, index) => <ProjectCardSkeleton key={index} />)
             : projects.map((project: ProjectDto) => (
-                <ProjectCard key={project.id} {...project} />
-              ))}
+              <ProjectCard key={project.id} {...project} />
+            ))}
         </div>
 
         <div className="text-center mt-12">
           <Button
             variant="outline"
-            className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             Ver Todos os Projetos
           </Button>

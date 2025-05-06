@@ -26,48 +26,48 @@ const ExperienceCard = ({
   technologies,
 }: ExperienceCardProps) => {
   return (
-    <Card key={id} className="card-hover">
-      <CardHeader>
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-          <div>
-            <CardTitle className="text-2xl">{role}</CardTitle>
-            <CardDescription className="text-lg font-medium">
-              {company}
-            </CardDescription>
-          </div>
-          <Badge
-            variant="outline"
-            className="w-fit text-portfolio-blue border-portfolio-blue"
-          >
-            {period}
-          </Badge>
+    <Card key={id} className="card-hover bg-card">
+    <CardHeader>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <div>
+          <CardTitle className="text-2xl text-foreground">{role}</CardTitle>
+          <CardDescription className="text-lg font-medium text-muted-foreground">
+            {company}
+          </CardDescription>
         </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-gray-700 mb-4">{description}</p>
+        <Badge
+          variant="outline"
+          className="w-fit text-primary border-primary dark:text-primary dark:border-primary"
+        >
+          {period}
+        </Badge>
+      </div>
+    </CardHeader>
+    <CardContent>
+      <p className="text-muted-foreground mb-4">{description}</p>
 
-        <div className="mb-4">
-          <h4 className="font-semibold mb-2">Conquistas Principais:</h4>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700">
-            {achievements.map((achievement, index) => (
-              <li key={index}>{achievement}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <Badge
-              key={tech}
-              variant="secondary"
-              className="bg-portfolio-light-blue/30 text-portfolio-blue"
-            >
-              {tech}
-            </Badge>
+      <div className="mb-4">
+        <h4 className="font-semibold mb-2 text-foreground">Conquistas Principais:</h4>
+        <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+          {achievements.map((achievement, index) => (
+            <li key={index}>{achievement}</li>
           ))}
-        </div>
-      </CardContent>
-    </Card>
+        </ul>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech) => (
+          <Badge
+            key={tech}
+            variant="secondary"
+            className="bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary"
+          >
+            {tech}
+          </Badge>
+        ))}
+      </div>
+    </CardContent>
+  </Card>
   );
 };
 

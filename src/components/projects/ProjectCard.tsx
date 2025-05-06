@@ -32,22 +32,22 @@ const ProjectCard = ({
     <Card key={id} className="overflow-hidden card-hover">
       <div className="h-48 overflow-hidden">
         <img
-          src={image}
+          src={import.meta.env.VITE_API_URL + image}
           alt={title}
           className="w-full h-full object-cover object-center transition-transform hover:scale-105"
         />
       </div>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-foreground">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <Badge
               key={tag}
               variant="secondary"
-              className="bg-portfolio-light-blue/30 text-portfolio-blue"
+              className="bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary"
             >
               {tag}
             </Badge>
@@ -58,7 +58,7 @@ const ProjectCard = ({
         <Button
           variant="ghost"
           size="sm"
-          className="text-portfolio-blue"
+          className="text-primary hover:text-primary/80"
           asChild
         >
           <a href={repoLink} target="_blank" rel="noopener noreferrer">
@@ -69,7 +69,7 @@ const ProjectCard = ({
         <Button
           variant="ghost"
           size="sm"
-          className="text-portfolio-blue"
+          className="text-primary hover:text-primary/80"
           asChild
         >
           <a href={liveLink} target="_blank" rel="noopener noreferrer">
