@@ -1,43 +1,26 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Platform",
-    "description": "Plataforma de comércio eletrônico completa com painel de administração, pagamentos e análises.",
-    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "title": "Landing Page Folgen Group",
+    "description": "Landing page para uma empresa.",
+    "image": "/projects/folgen-group/image.png",
     "tags": [
       "React",
-      "Node.js",
-      "MongoDB",
-      "Stripe"
+      "Vite.js"
     ],
-    "liveLink": "#",
-    "repoLink": "#"
+    "liveLink": "https://igorpaslauski.github.io/folgen-group",
+    "repoLink": "https://github.com/IgorPaslauski/folgen-group"
   },
   {
     "id": 2,
-    "title": "Task Management App",
-    "description": "Aplicativo de gerenciamento de tarefas com recursos de arrastar e soltar, filtros e etiquetas coloridas.",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "title": "Portifólio",
+    "description": "Portifólio pessoal desenvolvido com React e Vite.js.",
+    "image": "/projects/eduarda/image.png",
     "tags": [
-      "Vue.js",
-      "Firebase",
-      "Tailwind CSS"
+      "React",
+      "Vite.js"
     ],
-    "liveLink": "#",
-    "repoLink": "#"
-  },
-  {
-    "id": 3,
-    "title": "Health Tracking Dashboard",
-    "description": "Dashboard para acompanhamento de indicadores de saúde com gráficos e alertas personalizados.",
-    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "tags": [
-      "Next.js",
-      "TypeScript",
-      "Chart.js",
-      "PostgreSQL"
-    ],
-    "liveLink": "#",
-    "repoLink": "#"
+    "liveLink": "https://igorpaslauski.github.io/portifolio-eduarda/",
+    "repoLink": "https://github.com/IgorPaslauski/portifolio-eduarda"
   }
 ]
