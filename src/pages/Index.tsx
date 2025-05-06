@@ -9,6 +9,7 @@ import SkillsSection from "../components/skills/SkillsSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import PostsSection from "@/components/medium/PostsSection";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <SkillsSection />
         <PostsSection />
         <ContactSection />
+        <BackToTop />
       </main>
       <Footer />
     </div>
