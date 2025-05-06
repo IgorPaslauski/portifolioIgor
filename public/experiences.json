@@ -8,9 +8,9 @@
         "achievements": [
             "Responsável por desenvolverecuidar do sistema contábil da solução, além da realização de codereview e gerenciamento de backlog",
             "Realizei conversões de base dados para integrar coma solução da empresa",
-            "Criei sistemas de integração comAPIs governamental(REINF)",
-            "Ataulizei o sistema de Angular 6 para Angular 15",
-            "Melhorei o processo de geração do arquivo do PADdas prefeituras para gerar em 2 minutos no sistema"
+            "Criei sistemas de integração com APIs governamental (REINF)",
+            "Atualizei o sistema de Angular 6 para Angular 15",
+            "Melhorei o processo de geração do arquivo do PAD das prefeituras para gerar em 2 minutos no sistema"
         ],
         "technologies": [
             "C#",
@@ -31,8 +31,8 @@
         "description": "Desenvolvimento de sistemas ERP utilizando tecnologias como Java, EJb, HTML/CSS, JavaScript, Sql Server, Firbird, entre outras.",
         "achievements": [
             "Construí uma ferramenta de gerenciamento de Smart TVs remotamente e integrado com o sistema para uso interno",
-            "Otimização de processos com transferencia de estoque de produto entre filiais, com uma redução de 2hrs de processamento para 3 minutos",
-            "Criação emanutenção do sistema de Kanban da empresa, para uso interno e externo"
+            "Otimização de processos com transferencia de estoque de produto entre filiais, com uma redução de 2 hrs de processamento para 3 minutos",
+            "Criação e manutenção do sistema de Kanban da empresa, para uso interno e externo"
         ],
         "technologies": [
             "Java",
