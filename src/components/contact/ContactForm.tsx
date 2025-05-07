@@ -45,14 +45,14 @@ export default function ContactForm() {
                     message: formData.message,
                     _subject: `Novo contato: ${formData.subject}`,
                     _template: "table",
-                    _captcha: "false", // Set to "true" to enable reCAPTCHA
+                    _captcha: "false"
                 }),
             });
 
             if (response.ok) {
                 toast({
                     title: "Sucesso",
-                    description: "Mensagem enviada com sucesso! Verifique sua caixa de entrada ou spam.",
+                    description: "Mensagem enviada com sucesso! Obrigado por entrar em contato comigo. Retornarei em breve.",
                 });
                 setFormData({ name: "", email: "", subject: "", message: "" });
             } else {
