@@ -25,9 +25,10 @@ export default function BackToTop() {
     <button
       onClick={backToTop}
       className={clsx(
-        "fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-2 z-10 transition-opacity duration-300 ease-in-out",
+        "fixed right-4 bg-blue-500 text-white rounded-full p-2 z-10 transition-opacity duration-300 ease-in-out",
         isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       )}
+      style={{ bottom: "4rem" }}
     >
       <ArrowUp />
     </button>
