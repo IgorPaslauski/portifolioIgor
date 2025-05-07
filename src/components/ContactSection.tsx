@@ -5,10 +5,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import ContactForm from "./contact/ContactForm";
 
 const ContactSection = () => {
   return (
@@ -35,49 +33,7 @@ const ContactSection = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nome
-                      </label>
-                      <Input id="name" placeholder="Seu nome completo" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="seu.email@exemplo.com"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Assunto
-                    </label>
-                    <Input
-                      id="subject"
-                      placeholder="Qual o motivo do contato?"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Mensagem
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Detalhe sua proposta ou mensagem aqui..."
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  <Button className="w-full bg-portfolio-blue hover:bg-portfolio-dark-blue">
-                    <Send className="mr-2 h-4 w-4" />
-                    Enviar Mensagem
-                  </Button>
-                </form>
+                <ContactForm />
               </CardContent>
             </Card>
           </div>
