@@ -21,15 +21,20 @@ export function ChapterNav() {
         >
           Paslauski
         </a>
-        <button
-          type="button"
-          className="pointer-events-auto font-mono text-[11px] uppercase tracking-[0.28em] text-dust md:hidden"
-          aria-expanded={open}
-          aria-controls="chapter-index"
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? "Fechar" : "Índice"}
-        </button>
+        <div className="pointer-events-auto flex items-center gap-4 md:hidden">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ember" aria-live="polite">
+            {chapters.find((item) => item.id === chapter)?.index} / 06
+          </p>
+          <button
+            type="button"
+            className="font-mono text-[11px] uppercase tracking-[0.28em] text-dust"
+            aria-expanded={open}
+            aria-controls="chapter-index"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? "Fechar" : "Índice"}
+          </button>
+        </div>
       </header>
 
       <nav

@@ -32,7 +32,8 @@ export function Engine() {
   const group = useRef<Group>(null);
   const core = useRef<Mesh>(null);
   const { pointer, progress, reducedMotion, chapter } = useExperience();
-  const hot = chapter === "obras" || chapter === "canal";
+  const hot = chapter === "obras";
+  const quiet = chapter === "canal" || chapter === "caderno";
 
   const shards = useMemo(
     () =>
@@ -70,8 +71,8 @@ export function Engine() {
           color="#1a1612"
           metalness={0.72}
           roughness={0.28}
-          emissive={hot ? "#e85d04" : "#5c2a10"}
-          emissiveIntensity={hot ? 0.42 : 0.16}
+          emissive={hot ? "#e85d04" : quiet ? "#1a1612" : "#5c2a10"}
+          emissiveIntensity={hot ? 0.42 : quiet ? 0.04 : 0.16}
         />
       </mesh>
       <mesh>

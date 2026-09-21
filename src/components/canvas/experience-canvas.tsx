@@ -9,7 +9,8 @@ const Scene = lazy(() =>
 );
 
 export function ExperienceCanvas() {
-  const { webgl, reducedMotion, tier } = useExperience();
+  const { webgl, reducedMotion, tier, chapter } = useExperience();
+  const dim = chapter === "canal" ? 0.62 : chapter === "caderno" ? 0.45 : 0.18;
 
   if (!webgl) {
     return <FallbackBackdrop />;
@@ -36,6 +37,10 @@ export function ExperienceCanvas() {
         {!reducedMotion && <AdaptiveDpr pixelated />}
         <AdaptiveEvents />
       </Canvas>
+      <div
+        className="absolute inset-0 bg-ink transition-opacity duration-700"
+        style={{ opacity: dim }}
+      />
     </div>
   );
 }

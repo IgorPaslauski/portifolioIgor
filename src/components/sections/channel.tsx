@@ -84,7 +84,11 @@ export function Channel() {
           </div>
         </div>
 
-        <form className="space-y-5 lg:col-span-7" onSubmit={onSubmit} noValidate>
+        <form
+          className="space-y-5 border border-paper/10 bg-ink-50 p-6 md:p-8 lg:col-span-7"
+          onSubmit={onSubmit}
+          noValidate
+        >
           <div className="grid gap-5 md:grid-cols-2">
             <Field id="name" label="Nome" autoComplete="name" />
             <Field id="email" label="Email" type="email" autoComplete="email" />

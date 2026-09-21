@@ -67,6 +67,10 @@ body {
   background: linear-gradient(90deg, transparent, #2c2722 12%, #2c2722 88%, transparent);
 }
 
+.section-scrim {
+  background: linear-gradient(90deg, rgb(9 8 7 / 0.78) 0%, rgb(9 8 7 / 0.28) 55%, transparent 100%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
