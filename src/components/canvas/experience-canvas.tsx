@@ -12,7 +12,7 @@ export function ExperienceCanvas() {
   const { webgl, reducedMotion, tier } = useExperience();
 
   if (!webgl) {
-    return <FallbackBackdrop />;
+    return <FallbackBackdrop contained />;
   }
 
   return (

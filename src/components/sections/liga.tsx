@@ -55,8 +55,8 @@ export function Liga({ onProgress }: { onProgress: (value: number) => void }) {
     onProgress(reducedMotion ? 1 : progress);
   }, [onProgress, progress, reducedMotion]);
 
-  const photoFade = 1 - smoothstep(0.16, 0.4, progress);
-  const stageShift = smoothstep(0.2, 0.48, progress);
+  const photoFade = 1 - smoothstep(0.1, 0.32, progress);
+  const stageShift = smoothstep(0.16, 0.42, progress);
 
   return (
     <section ref={sectionRef} id="boot" className="relative">

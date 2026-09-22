@@ -1,4 +1,4 @@
-import { Lights } from "./lights";
+import { Atmosphere } from "./atmosphere";
 import { CameraRig } from "./camera-rig";
 import { Assembly } from "./assembly";
 import { Field } from "./field";
@@ -10,10 +10,10 @@ export function Scene() {
   return (
     <>
       <CameraRig />
-      <Lights />
+      <Atmosphere />
       <Assembly />
       {tier === "high" && <Field />}
-      <fog attach="fog" args={["#090807", 6.5, 16]} />
+      <fog attach="fog" args={["#090807", 8, 18]} />
     </>
   );
 }
