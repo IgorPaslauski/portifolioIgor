@@ -9,16 +9,15 @@ const Scene = lazy(() =>
 );
 
 export function ExperienceCanvas() {
-  const { webgl, reducedMotion, tier, chapter } = useExperience();
-  const dim = chapter === "canal" ? 0.62 : chapter === "caderno" ? 0.45 : 0.18;
+  const { webgl, reducedMotion, tier } = useExperience();
 
   if (!webgl) {
     return <FallbackBackdrop />;
   }
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-0" aria-hidden>
-      <FallbackBackdrop />
+    <div className="absolute inset-0" aria-hidden>
+      <FallbackBackdrop contained />
       <Canvas
         dpr={tier === "high" ? [1, 1.5] : [1, 1]}
         gl={{
@@ -27,7 +26,7 @@ export function ExperienceCanvas() {
           powerPreference: tier === "low" ? "low-power" : "high-performance",
           stencil: false,
         }}
-        camera={{ position: [0, 0.25, 4.4], fov: 42, near: 0.1, far: 30 }}
+        camera={{ position: [0.2, 0.15, 3.6], fov: 40, near: 0.1, far: 24 }}
         style={{ background: "transparent" }}
       >
         <Suspense fallback={null}>
@@ -37,10 +36,6 @@ export function ExperienceCanvas() {
         {!reducedMotion && <AdaptiveDpr pixelated />}
         <AdaptiveEvents />
       </Canvas>
-      <div
-        className="absolute inset-0 bg-ink transition-opacity duration-700"
-        style={{ opacity: dim }}
-      />
     </div>
   );
 }

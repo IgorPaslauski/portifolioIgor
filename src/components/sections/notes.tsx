@@ -7,7 +7,7 @@ export function Notes() {
   return (
     <section id="caderno" className="relative z-10 px-gutter py-28 md:py-36">
       <div className="mx-auto max-w-page">
-        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">05 · Caderno</p>
+        <p className="text-[12px] uppercase tracking-[0.28em] text-dust">Caderno</p>
         <h2 className="mt-4 max-w-2xl font-display text-display-md text-paper">
           Escrita, estudo, o que não cabe num commit.
         </h2>

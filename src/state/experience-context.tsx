@@ -12,10 +12,12 @@ export function ExperienceProvider({
   children,
   hoveredCase,
   setHoveredCase,
+  ligaProgress,
 }: {
   children: ReactNode;
   hoveredCase: string | null;
   setHoveredCase: (slug: string | null) => void;
+  ligaProgress: number;
 }) {
   const reducedMotion = usePrefersReducedMotion();
   const progress = useScrollProgress();
@@ -29,6 +31,7 @@ export function ExperienceProvider({
   const value = useMemo(
     () => ({
       progress,
+      ligaProgress,
       chapter,
       pointer,
       reducedMotion,
@@ -37,7 +40,7 @@ export function ExperienceProvider({
       hoveredCase,
       setHoveredCase,
     }),
-    [progress, chapter, pointer, reducedMotion, webgl, tier, hoveredCase, setHoveredCase],
+    [progress, ligaProgress, chapter, pointer, reducedMotion, webgl, tier, hoveredCase, setHoveredCase],
   );
 
   return <ExperienceContext.Provider value={value}>{children}</ExperienceContext.Provider>;

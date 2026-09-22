@@ -5,7 +5,7 @@ import { useExperience } from "@/hooks/use-experience";
 
 export function Field() {
   const points = useRef<Points>(null);
-  const { progress, tier, reducedMotion } = useExperience();
+  const { ligaProgress, tier, reducedMotion } = useExperience();
   const count = tier === "high" ? 420 : tier === "medium" ? 180 : 70;
 
   const geometry = useMemo(() => {
@@ -25,7 +25,7 @@ export function Field() {
 
   useFrame(({ clock }) => {
     if (!points.current || reducedMotion) return;
-    points.current.rotation.y = clock.elapsedTime * 0.018 + progress * 0.35;
+    points.current.rotation.y = clock.elapsedTime * 0.018 + ligaProgress * 0.35;
     points.current.rotation.x = Math.sin(clock.elapsedTime * 0.05) * 0.08;
   });
 

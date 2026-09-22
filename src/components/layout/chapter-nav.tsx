@@ -14,37 +14,46 @@ export function ChapterNav() {
 
   return (
     <>
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-start justify-between px-gutter pt-5">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-gutter py-5">
         <a
           href="#boot"
-          className="pointer-events-auto font-mono text-[11px] uppercase tracking-[0.32em] text-paper/80 transition-colors hover:text-ember"
+          className="pointer-events-auto text-[13px] tracking-[0.18em] text-paper/90"
         >
           Paslauski
         </a>
-        <div className="pointer-events-auto flex items-center gap-4 md:hidden">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ember" aria-live="polite">
-            {chapters.find((item) => item.id === chapter)?.index} / 06
-          </p>
-          <button
-            type="button"
-            className="font-mono text-[11px] uppercase tracking-[0.28em] text-dust"
-            aria-expanded={open}
-            aria-controls="chapter-index"
-            onClick={() => setOpen((value) => !value)}
-          >
-            {open ? "Fechar" : "Índice"}
-          </button>
-        </div>
+        <nav className="pointer-events-auto hidden items-center gap-8 md:flex" aria-label="Seções">
+          {chapters.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => go(item.href)}
+              className={cn(
+                "text-[13px] text-dust transition-colors hover:text-paper",
+                chapter === item.id && "text-paper",
+              )}
+              aria-current={chapter === item.id ? "true" : undefined}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+        <button
+          type="button"
+          className="pointer-events-auto text-[13px] text-dust md:hidden"
+          aria-expanded={open}
+          aria-controls="chapter-index"
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? "Fechar" : "Menu"}
+        </button>
       </header>
 
       <nav
         id="chapter-index"
-        aria-label="Capítulos"
+        aria-label="Menu"
         className={cn(
-          "fixed right-0 top-0 z-40 flex h-full w-[min(18rem,80vw)] flex-col justify-center gap-2 border-l border-paper/10 bg-ink/95 px-6 py-20 backdrop-blur-sm transition-transform duration-500 ease-editorial md:w-auto md:border-0 md:bg-transparent md:px-5 md:py-0 md:backdrop-blur-0 lg:px-7",
-          open
-            ? "pointer-events-auto translate-x-0"
-            : "pointer-events-none translate-x-full md:pointer-events-auto md:translate-x-0",
+          "fixed inset-0 z-30 flex flex-col justify-center gap-6 bg-ink px-gutter md:hidden",
+          open ? "pointer-events-auto" : "pointer-events-none hidden",
         )}
       >
         {chapters.map((item) => (
@@ -52,16 +61,9 @@ export function ChapterNav() {
             key={item.id}
             type="button"
             onClick={() => go(item.href)}
-            className={cn(
-              "group flex items-baseline gap-3 text-left font-mono text-[11px] uppercase tracking-[0.22em] transition-colors",
-              chapter === item.id ? "text-ember" : "text-dust hover:text-paper",
-            )}
-            aria-current={chapter === item.id ? "true" : undefined}
+            className="text-left font-display text-4xl text-paper"
           >
-            <span>{item.index}</span>
-            <span className={cn("md:max-w-0 md:overflow-hidden md:opacity-0 md:transition-all md:duration-300", "md:group-hover:max-w-[8rem] md:group-hover:opacity-100", chapter === item.id && "md:max-w-[8rem] md:opacity-100")}>
-              {item.label}
-            </span>
+            {item.label}
           </button>
         ))}
       </nav>

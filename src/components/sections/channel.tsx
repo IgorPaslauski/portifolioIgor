@@ -43,7 +43,7 @@ export function Channel() {
     <section id="canal" className="relative z-10 px-gutter py-28 md:py-36">
       <div className="mx-auto grid max-w-page gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">06 · Canal</p>
+          <p className="text-[12px] uppercase tracking-[0.28em] text-dust">Contato</p>
           <h2 className="mt-4 font-display text-display-md text-paper">Se fizer sentido, escreva.</h2>
           <p className="mt-5 font-body text-lg text-paper/75">{profile.availability}</p>
 

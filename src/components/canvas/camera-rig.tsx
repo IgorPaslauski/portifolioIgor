@@ -6,13 +6,13 @@ import { useExperience } from "@/hooks/use-experience";
 
 export function CameraRig() {
   const { camera } = useThree();
-  const { progress, pointer, reducedMotion, tier } = useExperience();
+  const { ligaProgress, pointer, reducedMotion, tier } = useExperience();
   const look = useRef(new Vector3());
   const desired = useRef(new Vector3());
   const target = useRef(new Vector3());
 
   useFrame(() => {
-    const frame = sampleCamera(reducedMotion ? 0.08 : progress);
+    const frame = sampleCamera(reducedMotion ? 1 : ligaProgress);
     const parallax = reducedMotion || tier === "low" ? 0 : 0.42;
 
     desired.current.set(

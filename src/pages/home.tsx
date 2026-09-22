@@ -1,37 +1,30 @@
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { Channel } from "@/components/sections/channel";
+import { Liga } from "@/components/sections/liga";
 import { Notes } from "@/components/sections/notes";
-import { Opening } from "@/components/sections/opening";
-import { Signal } from "@/components/sections/signal";
-import { System } from "@/components/sections/system";
+import { Principles } from "@/components/sections/principles";
 import { Trace } from "@/components/sections/trace";
 import { Works } from "@/components/sections/works";
 import { SiteChrome } from "@/components/layout/site-chrome";
-import { FallbackBackdrop } from "@/components/canvas/fallback";
 import { useHashScroll } from "@/hooks/use-hash-scroll";
 import { ExperienceProvider } from "@/state/experience-context";
 
-const ExperienceCanvas = lazy(() =>
-  import("@/components/canvas/experience-canvas").then((module) => ({
-    default: module.ExperienceCanvas,
-  })),
-);
-
 export function HomePage() {
   const [hoveredCase, setHoveredCase] = useState<string | null>(null);
+  const [ligaProgress, setLigaProgress] = useState(0);
   useHashScroll();
 
   return (
-    <ExperienceProvider hoveredCase={hoveredCase} setHoveredCase={setHoveredCase}>
-      <Suspense fallback={<FallbackBackdrop />}>
-        <ExperienceCanvas />
-      </Suspense>
+    <ExperienceProvider
+      hoveredCase={hoveredCase}
+      setHoveredCase={setHoveredCase}
+      ligaProgress={ligaProgress}
+    >
       <SiteChrome>
         <main>
-          <Opening />
-          <Signal />
+          <Liga onProgress={setLigaProgress} />
           <Trace />
-          <System />
+          <Principles />
           <Works />
           <Notes />
           <Channel />

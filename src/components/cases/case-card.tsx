@@ -24,11 +24,11 @@ export function CaseCard({
         className="grid items-end gap-6 md:grid-cols-12"
         aria-label={`Abrir case ${project.title}`}
       >
-        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-dust md:col-span-2">
+        <p className="text-[12px] uppercase tracking-[0.2em] text-dust md:col-span-2">
           {String(index + 1).padStart(2, "0")}
         </p>
         <div className="md:col-span-6">
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ember">
+          <p className="text-[12px] uppercase tracking-[0.2em] text-dust">
             {project.kicker} · {project.year}
           </p>
           <h3 className="mt-2 font-display text-4xl text-paper transition-colors group-hover:text-ember md:text-5xl">

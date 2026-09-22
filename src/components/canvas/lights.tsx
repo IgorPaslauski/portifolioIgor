@@ -6,12 +6,12 @@ import { useExperience } from "@/hooks/use-experience";
 
 export function Lights() {
   const ember = useRef<PointLight>(null);
-  const { progress, reducedMotion } = useExperience();
+  const { ligaProgress, reducedMotion } = useExperience();
 
   useFrame(({ clock }) => {
     if (!ember.current) return;
     const pulse = reducedMotion ? 1 : 0.85 + Math.sin(clock.elapsedTime * 0.7) * 0.15;
-    ember.current.intensity = sampleCamera(progress).intensity * 18 * pulse;
+    ember.current.intensity = sampleCamera(ligaProgress).intensity * 16 * pulse;
   });
 
   return (

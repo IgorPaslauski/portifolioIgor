@@ -4,6 +4,7 @@ import type { PerformanceTier } from "@/lib/performance";
 
 export type ExperienceContextValue = {
   progress: number;
+  ligaProgress: number;
   chapter: ChapterId;
   pointer: { x: number; y: number };
   reducedMotion: boolean;

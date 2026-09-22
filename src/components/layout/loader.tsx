@@ -6,8 +6,8 @@ export function Loader() {
   const [leave, setLeave] = useState(false);
 
   useEffect(() => {
-    const leaveTimer = window.setTimeout(() => setLeave(true), 900);
-    const hideTimer = window.setTimeout(() => setVisible(false), 1400);
+    const leaveTimer = window.setTimeout(() => setLeave(true), 700);
+    const hideTimer = window.setTimeout(() => setVisible(false), 1100);
     return () => {
       window.clearTimeout(leaveTimer);
       window.clearTimeout(hideTimer);
@@ -19,14 +19,13 @@ export function Loader() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[70] flex items-end justify-between bg-ink px-gutter py-10 transition-opacity duration-500",
+        "fixed inset-0 z-[70] flex items-center justify-center bg-ink transition-opacity duration-500",
         leave && "opacity-0",
       )}
       role="status"
       aria-live="polite"
     >
-      <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-dust">Compilando o mapa-fonte</p>
-      <p className="font-display text-4xl text-paper">IP</p>
+      <p className="text-[13px] tracking-[0.22em] text-paper/70">Paslauski</p>
     </div>
   );
 }

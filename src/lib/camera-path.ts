@@ -8,13 +8,11 @@ export type CameraKeyframe = {
 };
 
 export const cameraPath: CameraKeyframe[] = [
-  { at: 0, position: [0.15, 0.25, 4.35], lookAt: [0, 0.05, 0], intensity: 1.05 },
-  { at: 0.16, position: [1.35, 0.55, 5.4], lookAt: [0.1, 0.05, 0], intensity: 1 },
-  { at: 0.34, position: [-2.15, 1.15, 6.8], lookAt: [0.35, 0, 0], intensity: 0.92 },
-  { at: 0.5, position: [0.55, 2.05, 8.1], lookAt: [0, 0.1, 0], intensity: 0.88 },
-  { at: 0.68, position: [2.85, 0.35, 5.9], lookAt: [0.7, 0.05, 0], intensity: 1.12 },
-  { at: 0.84, position: [-1.8, 1.15, 7.2], lookAt: [0, 0.2, 0], intensity: 0.42 },
-  { at: 1, position: [2.4, 1.4, 8.4], lookAt: [-0.4, 0.1, 0], intensity: 0.28 },
+  { at: 0, position: [0.2, 0.15, 3.6], lookAt: [0, 0.05, 0], intensity: 0.95 },
+  { at: 0.22, position: [0.35, 0.2, 4.1], lookAt: [0, 0.08, 0], intensity: 1 },
+  { at: 0.38, position: [1.8, 0.9, 6.4], lookAt: [0, 0.15, 0], intensity: 1.05 },
+  { at: 0.72, position: [2.4, 0.55, 6.8], lookAt: [0, 0.1, 0], intensity: 1.1 },
+  { at: 1, position: [0.1, 0.35, 5.6], lookAt: [0, 0.15, 0], intensity: 1.05 },
 ];
 
 export function sampleCamera(progress: number) {

@@ -1,8 +1,7 @@
 import { Lights } from "./lights";
 import { CameraRig } from "./camera-rig";
-import { Engine } from "./engine";
+import { Assembly } from "./assembly";
 import { Field } from "./field";
-import { ProjectNodes } from "./project-nodes";
 import { useExperience } from "@/hooks/use-experience";
 
 export function Scene() {
@@ -12,10 +11,9 @@ export function Scene() {
     <>
       <CameraRig />
       <Lights />
-      <Engine />
-      {tier !== "low" && <Field />}
-      {tier !== "low" && <ProjectNodes />}
-      <fog attach="fog" args={["#090807", 7.5, 18]} />
+      <Assembly />
+      {tier === "high" && <Field />}
+      <fog attach="fog" args={["#090807", 6.5, 16]} />
     </>
   );
 }

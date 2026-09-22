@@ -17,3 +17,8 @@ export function inverseLerp(from: number, to: number, value: number) {
   if (from === to) return 0;
   return clamp((value - from) / (to - from));
 }
+
+export function smoothstep(from: number, to: number, value: number) {
+  const t = inverseLerp(from, to, value);
+  return t * t * (3 - 2 * t);
+}
