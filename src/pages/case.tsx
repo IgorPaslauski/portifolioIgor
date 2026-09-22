@@ -34,6 +34,7 @@ export function CasePage() {
   return (
     <>
       <FallbackBackdrop />
+      <div className="page-grid pointer-events-none fixed inset-0 -z-10 opacity-35" aria-hidden />
       <header className="relative z-20 px-gutter pt-6">
         <Link to="/" className="font-mono text-[11px] uppercase tracking-[0.32em] text-paper/80 hover:text-ember">
           Paslauski

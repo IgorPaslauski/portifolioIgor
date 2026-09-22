@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useInView(threshold = 0.4) {
-  const ref = useRef<HTMLElement | null>(null);
+export function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.4) {
+  const ref = useRef<T | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

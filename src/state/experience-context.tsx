@@ -2,7 +2,7 @@ import { useMemo, type ReactNode } from "react";
 import { useActiveChapter } from "@/hooks/use-active-chapter";
 import { useLenis } from "@/hooks/use-lenis";
 import { usePerformanceTier } from "@/hooks/use-performance-tier";
-import { usePointer } from "@/hooks/use-pointer";
+import { usePointerBridge } from "@/hooks/use-pointer";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
 import { useWebGL } from "@/hooks/use-webgl";
@@ -22,10 +22,10 @@ export function ExperienceProvider({
   const reducedMotion = usePrefersReducedMotion();
   const progress = useScrollProgress();
   const chapter = useActiveChapter();
-  const pointer = usePointer();
   const webgl = useWebGL();
   const tier = usePerformanceTier();
 
+  usePointerBridge();
   useLenis(!reducedMotion);
 
   const value = useMemo(
@@ -33,14 +33,13 @@ export function ExperienceProvider({
       progress,
       ligaProgress,
       chapter,
-      pointer,
       reducedMotion,
       webgl,
       tier,
       hoveredCase,
       setHoveredCase,
     }),
-    [progress, ligaProgress, chapter, pointer, reducedMotion, webgl, tier, hoveredCase, setHoveredCase],
+    [progress, ligaProgress, chapter, reducedMotion, webgl, tier, hoveredCase, setHoveredCase],
   );
 
   return <ExperienceContext.Provider value={value}>{children}</ExperienceContext.Provider>;

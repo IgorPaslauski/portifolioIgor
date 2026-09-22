@@ -71,6 +71,26 @@ body {
   background: linear-gradient(90deg, rgb(9 8 7 / 0.78) 0%, rgb(9 8 7 / 0.28) 55%, transparent 100%);
 }
 
+.metric-display {
+  font-family: Syne, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(3.4rem, 11vw, 8.4rem);
+  line-height: 0.84;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.code-panel {
+  border: 1px solid rgb(237 230 214 / 0.14);
+  background: rgb(9 8 7 / 0.72);
+  padding: 1rem 1.1rem;
+}
+
+.token-fallback {
+  background:
+    radial-gradient(circle at 30% 40%, rgb(232 93 4 / 0.16), transparent 42%),
+    radial-gradient(circle at 70% 60%, rgb(201 162 122 / 0.1), transparent 46%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
