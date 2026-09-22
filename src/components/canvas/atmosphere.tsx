@@ -38,7 +38,7 @@ export function Atmosphere() {
       <pointLight ref={rim} position={[1.7, 0.85, 1.9]} color="#e85d04" distance={10} decay={2} />
       {tier !== "low" && <Environment preset="studio" />}
       {tier !== "low" && (
-        <ContactShadows position={[0, -1.28, 0]} opacity={0.4} scale={6.4} blur={2.4} far={2.6} color="#000000" />
+        <ContactShadows position={[0, -1.15, 0]} opacity={0.32} scale={5.6} blur={2.8} far={2.2} color="#000000" />
       )}
     </>
   );

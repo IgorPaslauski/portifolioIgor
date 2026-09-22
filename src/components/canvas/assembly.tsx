@@ -1,4 +1,3 @@
-import { Html } from "@react-three/drei";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { Group } from "three";
@@ -54,8 +53,7 @@ function CoreGate() {
 
 function Module({ layer }: { layer: AssemblyLayer }) {
   const group = useRef<Group>(null);
-  const { ligaProgress, reducedMotion, tier } = useExperience();
-  const showLabel = tier !== "low" && typeof window !== "undefined" && window.innerWidth >= 1024;
+  const { ligaProgress, reducedMotion } = useExperience();
 
   useFrame(() => {
     if (!group.current) return;
@@ -76,33 +74,9 @@ function Module({ layer }: { layer: AssemblyLayer }) {
     group.current.visible = raw > 0.03 || reducedMotion;
   });
 
-  const labelOpacity = reducedMotion
-    ? 1
-    : smoothstep(layer.enter + 0.03, layer.settle, ligaProgress) *
-      (1 - smoothstep(layer.settle + 0.1, layer.settle + 0.22, ligaProgress) * 0.4);
-
   return (
     <group ref={group}>
       <Part layer={layer} />
-      {showLabel && (
-        <Html
-          position={[1.28, 0.04, 0.15]}
-          center
-          distanceFactor={7}
-          style={{
-            opacity: labelOpacity,
-            color: "#ede6d6",
-            fontSize: "11px",
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            whiteSpace: "nowrap",
-            pointerEvents: "none",
-            fontFamily: "IBM Plex Mono, monospace",
-          }}
-        >
-          {layer.title}
-        </Html>
-      )}
     </group>
   );
 }

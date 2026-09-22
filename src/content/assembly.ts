@@ -9,11 +9,11 @@ export const assemblyLayers = skillGroups.map((group, index) => {
   const side = index % 2 === 0 ? -1 : 1;
 
   const docks: Record<LayerKind, [number, number, number]> = {
-    glyphs: [0, 0.62, 0],
-    plate: [0, 0.08, 0.72],
-    conduits: [0, 0.02, 0],
-    lattice: [0, -0.72, 0],
-    halo: [0, 0.04, 0],
+    glyphs: [0, 0.52, 0],
+    plate: [0, 0.02, 0.42],
+    conduits: [0, 0, 0],
+    lattice: [0, -0.42, 0],
+    halo: [0, 0.02, 0],
   };
 
   const lines = [

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function PuroSucoLab({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={cn("relative overflow-hidden bg-ink-50", compact ? "min-h-[22rem]" : "min-h-[28rem] lg:min-h-[34rem]")}>
+    <div className={cn("relative overflow-hidden bg-ink-50", compact ? "min-h-[18rem]" : "min-h-[20rem] lg:min-h-[22rem]")}>
       <TokenCanvas />
       <div className="relative z-10 grid gap-4 p-5 md:grid-cols-2 md:p-7">
         <pre className="code-panel font-mono text-[12px] leading-6 text-paper/85 md:text-[13px]">

@@ -80,7 +80,7 @@ function PuroSucoFeature() {
       <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ember">
         01 · Linguagem + compilador · 2026 · Aberto
       </p>
-      <div className="mt-4 grid items-end gap-8 lg:grid-cols-12">
+      <div className="mt-4 grid items-start gap-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <h3 className="font-display text-display-md text-paper">PuroSuco</h3>
           <p className="mt-4 font-body text-lg leading-relaxed text-paper/75">
