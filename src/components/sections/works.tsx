@@ -81,7 +81,7 @@ function PuroSucoFeature() {
         01 · Linguagem + compilador · 2026 · Aberto
       </p>
       <div className="mt-4 grid items-start gap-8 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 lg:order-none order-last">
           <h3 className="font-display text-display-md text-paper">PuroSuco</h3>
           <p className="mt-4 font-body text-lg leading-relaxed text-paper/75">
             Uma linguagem experimental baseada em memes brasileiros — com lexer, parser, AST, diagnósticos,

@@ -33,7 +33,7 @@ export function Liga({ onProgress }: { onProgress: (value: number) => void }) {
   return (
     <section ref={sectionRef} id="boot" className="relative">
       <div className="lg:grid lg:grid-cols-2">
-        <div className="sticky top-0 z-0 h-[40svh] overflow-hidden bg-ink lg:h-svh">
+        <div className="sticky top-0 z-20 h-[40svh] overflow-hidden bg-ink lg:z-0 lg:h-svh">
           <Suspense fallback={<FallbackBackdrop contained />}>
             <ExperienceCanvas />
           </Suspense>
@@ -52,7 +52,7 @@ export function Liga({ onProgress }: { onProgress: (value: number) => void }) {
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/30 lg:bg-gradient-to-r lg:from-transparent lg:via-ink/10 lg:to-ink/55" />
         </div>
 
-        <div className="relative z-10">
+        <div className="relative lg:z-10">
           <Slide id="slide-boot" kicker={profile.role} title={profile.lastName} mark reduced={reducedMotion}>
             <p className="mt-5 max-w-md font-body text-lg leading-relaxed text-paper/75">
               {profile.headline} {profile.years} anos em sistemas que precisam funcionar na segunda-feira.
