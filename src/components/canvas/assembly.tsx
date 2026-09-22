@@ -24,10 +24,29 @@ export function Assembly() {
 
   return (
     <group ref={root} position={[0, 0.05, 0]}>
-      <Chassis />
+      <ChassisGate />
       {assemblyLayers.map((layer) => (
         <Module key={layer.id} layer={layer} />
       ))}
+    </group>
+  );
+}
+
+function ChassisGate() {
+  const group = useRef<Group>(null);
+  const { ligaProgress, reducedMotion } = useExperience();
+
+  useFrame(() => {
+    if (!group.current) return;
+    const t = reducedMotion ? 1 : smoothstep(0.08, 0.26, ligaProgress);
+    group.current.position.y = lerp(-0.45, 0, t);
+    group.current.scale.setScalar(lerp(0.86, 1, t));
+    group.current.visible = t > 0.04 || reducedMotion;
+  });
+
+  return (
+    <group ref={group}>
+      <Chassis />
     </group>
   );
 }
@@ -51,6 +70,8 @@ function Module({ layer }: { layer: AssemblyLayer }) {
       layer.spin[1] * (1 - t),
       layer.spin[2] * (1 - t),
     );
+    const hot = raw > 0.2 && raw < 0.98;
+    group.current.scale.setScalar(lerp(0.92, hot ? 1.04 : 1, raw));
     group.current.visible = raw > 0.03 || reducedMotion;
   });
 

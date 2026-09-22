@@ -6,7 +6,7 @@ export function useLenis(enabled: boolean) {
     if (!enabled) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.02,
       smoothWheel: true,
       touchMultiplier: 1.15,
     });

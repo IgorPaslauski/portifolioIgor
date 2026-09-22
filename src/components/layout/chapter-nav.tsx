@@ -1,20 +1,53 @@
 import { chapters } from "@/content";
 import { cn } from "@/lib/utils";
 import { useExperience } from "@/hooks/use-experience";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ChapterNav() {
-  const { chapter } = useExperience();
+  const { chapter, progress } = useExperience();
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const go = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
   };
 
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      const current = window.scrollY;
+      setHidden(current > 80 && current > last);
+      last = current;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
     <>
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-gutter py-5">
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[2px] bg-paper/10">
+        <div className="h-full bg-ember transition-[width] duration-150" style={{ width: `${progress * 100}%` }} />
+      </div>
+      <header
+        className={cn(
+          "pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-gutter py-5 transition-transform duration-500 ease-editorial",
+          hidden && !open ? "-translate-y-full" : "translate-y-0",
+        )}
+      >
         <a
           href="#boot"
           className="pointer-events-auto text-[13px] tracking-[0.18em] text-paper/90"

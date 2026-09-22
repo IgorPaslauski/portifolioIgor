@@ -16,10 +16,19 @@ export const assemblyLayers = skillGroups.map((group, index) => {
     heatsink: [0, 0.42, 0.12],
   };
 
+  const lines = [
+    "A matéria-prima. O que o sistema fala de fato.",
+    "Onde a pessoa toca o sistema — e onde ele responde.",
+    "O meio. Contrato, API, o que segura as pontas.",
+    "Memória longa. O estado que precisa sobreviver ao deploy.",
+    "O que mantém isso no ar quando ninguém está olhando.",
+  ];
+
   return {
     ...group,
     index,
     kind,
+    line: lines[index],
     dock: docks[kind],
     exploded: [
       side * (3.1 + index * 0.12),

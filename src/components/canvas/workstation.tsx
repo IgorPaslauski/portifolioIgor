@@ -105,6 +105,14 @@ export function DisplayPanel({ color }: { color: string }) {
           envMapIntensity={1.3}
         />
       </RoundedBox>
+      <mesh position={[-0.42, 0.22, 0.042]}>
+        <boxGeometry args={[0.18, 0.08, 0.01]} />
+        <meshStandardMaterial color="#090807" />
+      </mesh>
+      <mesh position={[-0.38, 0.22, 0.05]}>
+        <boxGeometry args={[0.045, 0.045, 0.01]} />
+        <meshStandardMaterial color="#e85d04" emissive="#e85d04" emissiveIntensity={0.7} />
+      </mesh>
     </group>
   );
 }

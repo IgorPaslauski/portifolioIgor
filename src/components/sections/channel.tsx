@@ -99,10 +99,10 @@ export function Channel() {
             <Button type="submit" disabled={status === "sending"}>
               {status === "sending" ? "Enviando…" : "Abrir o canal"}
             </Button>
-            {status === "ok" && <p className="text-sm text-paper/70">Chegou. Respondo em breve.</p>}
-            {status === "error" && (
-              <p className="text-sm text-ember">Não foi agora. Tente de novo ou mande um email direto.</p>
-            )}
+            <p className="text-sm text-paper/70" role="status" aria-live="polite">
+              {status === "ok" && "Chegou. Respondo em breve."}
+              {status === "error" && "Não foi agora. Tente de novo ou mande um email direto."}
+            </p>
           </div>
         </form>
       </div>
