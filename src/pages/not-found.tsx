@@ -7,6 +7,8 @@ export function NotFoundPage() {
 
   useEffect(() => {
     console.warn("404", location.pathname);
+    document.title = "Página não encontrada — Paslauski";
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (

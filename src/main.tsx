@@ -10,6 +10,10 @@ if (!root) {
   throw new Error("Root element not found");
 }
 
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
 createRoot(root).render(
   <StrictMode>
     <App />
