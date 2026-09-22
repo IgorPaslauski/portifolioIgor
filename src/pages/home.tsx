@@ -5,6 +5,7 @@ import { Notes } from "@/components/sections/notes";
 import { Principles } from "@/components/sections/principles";
 import { Trace } from "@/components/sections/trace";
 import { Works } from "@/components/sections/works";
+import { LabFrame } from "@/components/layout/lab-frame";
 import { SiteChrome } from "@/components/layout/site-chrome";
 import { useHashScroll } from "@/hooks/use-hash-scroll";
 import { ExperienceProvider } from "@/state/experience-context";
@@ -20,8 +21,9 @@ export function HomePage() {
       setHoveredCase={setHoveredCase}
       ligaProgress={ligaProgress}
     >
+      <LabFrame />
       <SiteChrome>
-        <main>
+        <main className="relative z-10">
           <Liga onProgress={setLigaProgress} />
           <Trace />
           <Principles />

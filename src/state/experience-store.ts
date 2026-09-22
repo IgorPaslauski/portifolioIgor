@@ -6,7 +6,6 @@ export type ExperienceContextValue = {
   progress: number;
   ligaProgress: number;
   chapter: ChapterId;
-  pointer: { x: number; y: number };
   reducedMotion: boolean;
   webgl: boolean;
   tier: PerformanceTier;

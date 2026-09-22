@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { pointerRef } from "@/lib/pointer-ref";
 
-export function usePointer() {
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
-
+export function usePointerBridge() {
   useEffect(() => {
     const onMove = (event: PointerEvent) => {
-      const x = (event.clientX / window.innerWidth) * 2 - 1;
-      const y = (event.clientY / window.innerHeight) * 2 - 1;
-      setPointer({ x, y: -y });
+      pointerRef.x = (event.clientX / window.innerWidth) * 2 - 1;
+      pointerRef.y = -((event.clientY / window.innerHeight) * 2 - 1);
     };
 
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
   }, []);
-
-  return pointer;
 }

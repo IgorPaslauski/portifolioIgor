@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ContractDiagram, MetricBoard, PuroSucoLab, ShotFrame, VersionShift } from "@/components/cases/visuals";
 import { getAdjacentProjects, type Project } from "@/content";
 import { Button } from "@/components/ui/button";
 
@@ -16,7 +17,7 @@ export function CaseArticle({ project }: { project: Project }) {
           {project.kicker}
         </p>
         <h1 className="mt-6 max-w-4xl font-display text-display-lg text-paper">{project.title}</h1>
-        <p className="mt-6 max-w-2xl text-xl text-paper/75">{project.summary}</p>
+        <p className="mt-6 max-w-2xl font-body text-xl text-paper/75">{project.summary}</p>
 
         <dl className="mt-10 grid gap-6 border-y border-paper/10 py-6 sm:grid-cols-3">
           <Meta label="Ano" value={project.year} />
@@ -24,11 +25,9 @@ export function CaseArticle({ project }: { project: Project }) {
           <Meta label="Stack" value={project.technologies.join(" · ")} />
         </dl>
 
-        {project.image && (
-          <figure className="mt-12 overflow-hidden">
-            <img src={project.image} alt={`Captura de ${project.title}`} className="w-full object-cover" />
-          </figure>
-        )}
+        <div className="mt-12">
+          <CaseVisual project={project} />
+        </div>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12">
           <Block title="Problema" text={project.problem} />
@@ -74,6 +73,23 @@ export function CaseArticle({ project }: { project: Project }) {
   );
 }
 
+function CaseVisual({ project }: { project: Project }) {
+  switch (project.slug) {
+    case "purosuco":
+      return <PuroSucoLab />;
+    case "estoque":
+      return <MetricBoard from="2h" to="3min" caption={project.result} />;
+    case "pad":
+      return <MetricBoard from="espera" to="2min" caption={project.result} />;
+    case "reinf":
+      return <ContractDiagram />;
+    case "angular-15":
+      return <VersionShift />;
+    default:
+      return project.image ? <ShotFrame project={project} /> : null;
+  }
+}
+
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div>
@@ -87,7 +103,7 @@ function Block({ title, text }: { title: string; text: string }) {
   return (
     <section className="lg:col-span-6">
       <h2 className="text-[12px] uppercase tracking-[0.22em] text-ember">{title}</h2>
-      <p className="mt-3 text-lg leading-relaxed text-paper/80">{text}</p>
+      <p className="mt-3 font-body text-lg leading-relaxed text-paper/80">{text}</p>
     </section>
   );
 }
