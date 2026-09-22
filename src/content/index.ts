@@ -1,0 +1,10 @@
+export { profile } from "./profile";
+export { chapters } from "./chapters";
+export type { ChapterId } from "./chapters";
+export { experiences } from "./experience";
+export type { Experience } from "./experience";
+export { projects, featuredProjects, getProject, getAdjacentProjects } from "./projects";
+export type { Project } from "./projects";
+export { skillGroups } from "./skills";
+export { principles } from "./principles";
+export { certifications } from "./certifications";

@@ -1,18 +1,28 @@
+import { copyFileSync } from "fs";
+import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode, command }) => ({
-  // Define a base com base no ambiente ou comando
-  //base: command === "build" ? "/portifolioIgor/" : "/",
+export default defineConfig({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: true,
   },
-  plugins: [react()].filter(
-    Boolean
-  ),
+  preview: {
+    host: true,
+    port: 4173,
+    allowedHosts: true,
+  },
+  plugins: [
+    react(),
+    {
+      name: "spa-github-pages-404",
+      closeBundle() {
+        copyFileSync(path.resolve("dist/index.html"), path.resolve("dist/404.html"));
+      },
+    },
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -21,5 +31,12 @@ export default defineConfig(({ mode, command }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ["three", "@react-three/fiber", "@react-three/drei"],
+        },
+      },
+    },
   },
-}));
+});
