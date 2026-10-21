@@ -1,34 +1,27 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
-import clsx from "clsx"; // Opcional, para simplificar classes condicionalmente
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    setIsVisible(window.scrollY > 300);
-  };
-
-  const backToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    const toggleVisibility = () => setIsVisible(window.scrollY > 300);
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
     <button
-      onClick={backToTop}
-      className={clsx(
-        "fixed right-4 bg-blue-500 text-white rounded-full p-2 z-10 transition-opacity duration-300 ease-in-out",
-        isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      )}
-      style={{ bottom: "4rem" }}
+      type="button"
+      onClick={() => {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      }}
+      aria-label="Voltar ao topo"
+      className={`fixed bottom-16 right-4 z-10 bg-primary p-2 text-primary-foreground transition-opacity ${
+        isVisible ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
     >
       <ArrowUp />
     </button>

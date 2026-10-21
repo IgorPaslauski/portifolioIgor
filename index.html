@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,16 +7,27 @@
   <title>Ígor Paslauski | Desenvolvedor Full Stack</title>
   <meta name="description" content="Portfólio profissional de Ígor Paslauski, desenvolvedor full stack especializado em React, Node.js, C# e TypeScript." />
   <meta name="author" content="Ígor Paslauski Pedroso de Oliveira" />
-  <meta name="theme-color" content="#0A192F" />
+  <meta name="theme-color" content="#F6F5F1" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var dark = stored === "dark" || ((stored === null || stored === "system") && systemDark);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", dark ? "#0C0C0B" : "#F6F5F1");
+      } catch (e) {}
+    })();
+  </script>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ígor Paslauski | Desenvolvedor Full Stack" />
-  <meta property="og:description" content="Transformando ideias em experiências digitais com código limpo e design moderno." />
-  <meta property="og:image" content="/perfil.jpg" />
-  <meta property="og:url" content="https://igorpaslauski.com" />
+  <meta property="og:description" content="Portfólio profissional de Ígor Paslauski, desenvolvedor full stack especializado em React, Node.js, C# e TypeScript." />
+  <meta property="og:image" content="https://paslauski.com.br/perfil.jpg" />
+  <meta property="og:url" content="https://paslauski.com.br" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ígor Paslauski | Desenvolvedor Full Stack" />
   <meta name="twitter:description" content="Portfólio profissional e projetos recentes." />
-  <meta name="twitter:image" content="/perfil.jpg" />
+  <meta name="twitter:image" content="https://paslauski.com.br/perfil.jpg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 

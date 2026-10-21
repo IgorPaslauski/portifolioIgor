@@ -1,26 +1,14 @@
-import { Card, CardHeader, CardContent } from "../ui/card";
-
 const SkillCardSkeleton = () => {
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-800 animate-pulse">
-      <CardHeader>
-        <div className="h-6 w-1/3 bg-gray-200 rounded"></div>
-        <div className="h-4 w-2/3 bg-gray-200 rounded mt-2"></div>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          {[1, 2, 3].map((_, index) => (
-            <div key={index}>
-              <div className="flex justify-between mb-1">
-                <div className="h-4 w-1/4 bg-gray-200 rounded"></div>
-                <div className="h-4 w-12 bg-gray-200 rounded"></div>
-              </div>
-              <div className="h-2 w-full bg-gray-200 rounded"></div>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+    <div aria-hidden="true" className="animate-pulse border border-border p-6">
+      <div className="mb-3 h-6 w-1/3 bg-muted" />
+      <div className="mb-6 h-4 w-2/3 bg-muted" />
+      <div className="grid grid-cols-2 gap-3">
+        {Array.from({ length: 6 }, (_, index) => (
+          <div key={index} className="h-8 bg-muted" />
+        ))}
+      </div>
+    </div>
   );
 };
 

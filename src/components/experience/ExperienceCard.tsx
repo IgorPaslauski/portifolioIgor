@@ -1,11 +1,4 @@
 import { Badge } from "../ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 
 export interface ExperienceCardProps {
   id: number;
@@ -16,8 +9,8 @@ export interface ExperienceCardProps {
   achievements: string[];
   technologies: string[];
 }
+
 const ExperienceCard = ({
-  id,
   role,
   company,
   description,
@@ -26,48 +19,29 @@ const ExperienceCard = ({
   technologies,
 }: ExperienceCardProps) => {
   return (
-    <Card key={id} className="card-hover bg-card">
-    <CardHeader>
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-        <div>
-          <CardTitle className="text-2xl text-foreground">{role}</CardTitle>
-          <CardDescription className="text-lg font-medium text-muted-foreground">
-            {company}
-          </CardDescription>
-        </div>
-        <Badge
-          variant="outline"
-          className="w-fit text-primary border-primary dark:text-primary dark:border-primary"
-        >
-          {period}
-        </Badge>
-      </div>
-    </CardHeader>
-    <CardContent>
-      <p className="text-muted-foreground mb-4">{description}</p>
-
-      <div className="mb-4">
-        <h4 className="font-semibold mb-2 text-foreground">Conquistas Principais:</h4>
-        <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-          {achievements.map((achievement, index) => (
-            <li key={index}>{achievement}</li>
+    <article className="grid gap-4 border-b border-border py-8 md:grid-cols-12">
+      <p className="text-sm text-signal md:col-span-3">{period}</p>
+      <div className="md:col-span-9">
+        <h3 className="text-foreground">{role}</h3>
+        <p className="mt-1 text-muted-foreground">{company}</p>
+        <p className="mt-4 text-muted-foreground">{description}</p>
+        <h4 className="mb-2 mt-6 font-sans text-sm font-medium text-foreground">Conquistas principais</h4>
+        <ul className="space-y-2 text-muted-foreground">
+          {achievements.map((achievement) => (
+            <li key={achievement} className="border-l border-signal pl-4">
+              {achievement}
+            </li>
           ))}
         </ul>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <Badge key={tech} variant="secondary" className="rounded-none text-foreground">
+              {tech}
+            </Badge>
+          ))}
+        </div>
       </div>
-
-      <div className="flex flex-wrap gap-2">
-        {technologies.map((tech) => (
-          <Badge
-            key={tech}
-            variant="secondary"
-            className="bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary"
-          >
-            {tech}
-          </Badge>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
+    </article>
   );
 };
 

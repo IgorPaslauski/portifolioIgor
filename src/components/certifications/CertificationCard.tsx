@@ -24,14 +24,14 @@ const CertificationCard = ({
   link,
 }: CertificationProps) => {
   return (
-    <Card key={id} className="card-hover bg-card">
+    <Card key={id} className="border-border bg-card shadow-none">
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <CardTitle className="text-xl text-foreground">{title}</CardTitle>
             <CardDescription className="text-muted-foreground">{issuer}</CardDescription>
           </div>
-          <Award className="h-8 w-8 text-primary dark:text-primary" />
+          <Award className="h-6 w-6 text-signal" />
         </div>
       </CardHeader>
       <CardContent>
@@ -43,7 +43,7 @@ const CertificationCard = ({
           </div>
           <a
             href={link}
-            className="text-primary flex items-center text-sm hover:text-primary/80 transition-colors"
+            className="inline-flex items-center text-sm text-foreground underline decoration-signal underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
           >

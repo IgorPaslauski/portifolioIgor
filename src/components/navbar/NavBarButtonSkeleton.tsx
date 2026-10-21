@@ -6,14 +6,7 @@ export interface NavBarButtonSkeletonProps {
 
 function NavBarButtonSkeleton({ className }: NavBarButtonSkeletonProps) {
   return (
-    <div
-      className={cn(
-        "hover:shadow-lg transition-shadow duration-800 animate-pulse",
-        className
-      )}
-    >
-      <div className="w-16 h-4 bg-gray-200 rounded"></div>
-    </div>
+    <div aria-hidden="true" className={cn("h-5 w-16 animate-pulse bg-muted", className)} />
   );
 }
 

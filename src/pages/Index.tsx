@@ -7,7 +7,6 @@ import ExperienceSection from "../components/experience/ExperienceSection";
 import CertificationsSection from "../components/certifications/CertificationsSection";
 import SkillsSection from "../components/skills/SkillsSection";
 import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
 import PostsSection from "@/components/medium/PostsSection";
 import BackToTop from "@/components/BackToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -18,17 +17,16 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
         <ProjectsSection />
-        <ExperienceSection />
-        <CertificationsSection />
         <SkillsSection />
+        <ExperienceSection />
+        <AboutSection />
         <PostsSection />
+        <CertificationsSection />
         <ContactSection />
         <WhatsAppButton />
         <BackToTop />
       </main>
-      <Footer />
     </div>
   );
 };

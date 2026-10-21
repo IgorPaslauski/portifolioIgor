@@ -1,26 +1,155 @@
 [
   {
+    "id": 3,
+    "title": "Layout+",
+    "description": "Extensão de navegador para ajustar a largura e a tipografia do ChatGPT.",
+    "image": "",
+    "tags": ["TypeScript", "Manifest V3"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/LayoutPlus"
+  },
+  {
+    "id": 4,
+    "title": "PuroSuco",
+    "description": "Linguagem experimental em .NET 8 que transpila para C#.",
+    "image": "",
+    "tags": ["C#", ".NET 8"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/purosuco"
+  },
+  {
     "id": 1,
     "title": "Landing Page Folgen Group",
     "description": "Landing page para uma empresa.",
     "image": "/projects/folgen-group/image.png",
-    "tags": [
-      "React",
-      "Vite.js"
-    ],
+    "tags": ["React", "Vite.js"],
     "liveLink": "https://igorpaslauski.github.io/folgen-group",
     "repoLink": "https://github.com/IgorPaslauski/folgen-group"
   },
   {
     "id": 2,
-    "title": "Portifólio",
-    "description": "Portifólio pessoal desenvolvido com React e Vite.js.",
+    "title": "Portfólio Eduarda",
+    "description": "Portfólio pessoal desenvolvido com React e Vite.js.",
     "image": "/projects/eduarda/image.png",
-    "tags": [
-      "React",
-      "Vite.js"
-    ],
+    "tags": ["React", "Vite.js"],
     "liveLink": "https://igorpaslauski.github.io/portifolio-eduarda/",
     "repoLink": "https://github.com/IgorPaslauski/portifolio-eduarda"
+  },
+  {
+    "id": 5,
+    "title": "PortGo",
+    "description": "Quiz de língua portuguesa para o ensino médio.",
+    "image": "",
+    "tags": ["Next.js", "TypeScript"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/PortGo"
+  },
+  {
+    "id": 6,
+    "title": "PhantShopping",
+    "description": "Lista de compras com login, cadastro, listas e itens.",
+    "image": "",
+    "tags": ["Next.js", "TypeScript"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/lista_de_compras"
+  },
+  {
+    "id": 7,
+    "title": "Marisane Almeida",
+    "description": "Site de terapia sistêmica com serviços, agendamento e contato.",
+    "image": "",
+    "tags": ["React", "Vite.js"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/marisane_site"
+  },
+  {
+    "id": 8,
+    "title": "AiSqlConsole",
+    "description": "Console .NET que pede uma pergunta e gera SQL com Ollama no PostgreSQL.",
+    "image": "",
+    "tags": ["C#", ".NET 8"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/AiSqlConsoleNetCore"
+  },
+  {
+    "id": 9,
+    "title": "Chat Ollama",
+    "description": "Console em C# que conversa com um modelo local via Ollama.",
+    "image": "",
+    "tags": ["C#", ".NET"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/OllamaAi"
+  },
+  {
+    "id": 10,
+    "title": "Salas WebRTC",
+    "description": "Servidor de sinalização para chamada em grupo com Socket.IO.",
+    "image": "",
+    "tags": ["JavaScript", "WebRTC"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/webrtc"
+  },
+  {
+    "id": 11,
+    "title": "Fire Sim",
+    "description": "Simulação de incêndio em floresta com MPI, CUDA e visualização.",
+    "image": "",
+    "tags": ["C", "CUDA", "MPI"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/Fire-sim"
+  },
+  {
+    "id": 12,
+    "title": "RSA cliente-servidor",
+    "description": "Troca de mensagens com RSA 2048, da disciplina de Segurança de Dados.",
+    "image": "",
+    "tags": ["C#", ".NET"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/Unijui_Cripto_RSA"
+  },
+  {
+    "id": 13,
+    "title": "Pong genético",
+    "description": "Redes neurais que aprendem Pong por algoritmo genético, no navegador.",
+    "image": "",
+    "tags": ["JavaScript", "Canvas"],
+    "liveLink": "https://igorpaslauski.github.io/Pong-GA/",
+    "repoLink": "https://github.com/IgorPaslauski/Pong-GA"
+  },
+  {
+    "id": 14,
+    "title": "Snake AI",
+    "description": "Cobra que evolui com uma rede neural em NumPy e algoritmo genético.",
+    "image": "",
+    "tags": ["Python", "NumPy"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/Snake_ai_2"
+  },
+  {
+    "id": 15,
+    "title": "Mobilidade em Ijuí",
+    "description": "Apresentação do diagnóstico de mobilidade urbana inteligente para Ijuí.",
+    "image": "",
+    "tags": ["HTML"],
+    "liveLink": "https://igorpaslauski.github.io/apresentacao-diagnostico-ijui/",
+    "repoLink": "https://github.com/IgorPaslauski/apresentacao-diagnostico-ijui"
+  },
+  {
+    "id": 16,
+    "title": "Estatística rápida",
+    "description": "Calculadora local de média, mediana, moda, variância e histograma.",
+    "image": "",
+    "tags": ["JavaScript"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/frequencia"
+  },
+  {
+    "id": 17,
+    "title": "Aulas UNIJUÍ",
+    "description": "App de turmas e tarefas, com API Express e PostgreSQL.",
+    "image": "",
+    "tags": ["Next.js", "Express"],
+    "liveLink": "",
+    "repoLink": "https://github.com/IgorPaslauski/my-app-unijui"
   }
 ]

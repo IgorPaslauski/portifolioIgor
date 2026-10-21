@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import { Progress } from "../ui/progress";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 export interface SkillProps {
   id: string;
@@ -13,25 +6,24 @@ export interface SkillProps {
   description: string;
   skills: { name: string; level: number }[];
 }
-const SkillCard = ({ id, title, description, skills }: SkillProps) => {
+
+const SkillCard = ({ title, description, skills }: SkillProps) => {
+  const ordered = [...skills].sort((a, b) => b.level - a.level);
+
   return (
-    <Card key={id} className="card-hover">
+    <Card className="border-border bg-card shadow-none">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="font-sans text-xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {skills.map((skill) => (
-            <div key={skill.name}>
-              <div className="flex justify-between mb-1">
-                <span className="font-medium">{skill.name}</span>
-                <span className="text-gray-500">{skill.level}%</span>
-              </div>
-              <Progress value={skill.level} className="h-2" />
-            </div>
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+          {ordered.map((skill) => (
+            <li key={skill.name} className="border-b border-border py-2 text-sm text-foreground">
+              {skill.name}
+            </li>
           ))}
-        </div>
+        </ul>
       </CardContent>
     </Card>
   );

@@ -1,12 +1,5 @@
+import { useState } from "react";
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 import { ExternalLink, Github } from "lucide-react";
 
 export interface ProjectProps {
@@ -19,66 +12,72 @@ export interface ProjectProps {
   repoLink: string;
 }
 
-const ProjectCard = ({
-  id,
-  image,
-  title,
-  description,
-  tags,
-  liveLink,
-  repoLink,
-}: ProjectProps) => {
+const canTilt =
+  typeof window !== "undefined" &&
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const ProjectCard = ({ image, title, description, tags, liveLink, repoLink }: ProjectProps) => {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
   return (
-    <Card key={id} className="overflow-hidden card-hover">
-      <div className="h-48 overflow-hidden">
+    <article
+      className="grid overflow-hidden border border-border bg-card md:grid-cols-12"
+      style={
+        canTilt
+          ? { transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }
+          : undefined
+      }
+      onPointerMove={(event) => {
+        if (!canTilt) return;
+        const rect = event.currentTarget.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        setTilt({ x: py * -4, y: px * 4 });
+      }}
+      onPointerLeave={() => setTilt({ x: 0, y: 0 })}
+    >
+      <div className="aspect-[16/10] md:col-span-5 md:aspect-auto">
         <img
           src={import.meta.env.VITE_API_URL + image}
           alt={title}
-          className="w-full h-full object-cover object-center transition-transform hover:scale-105"
+          className="h-full w-full object-cover"
         />
       </div>
-      <CardHeader>
-        <CardTitle className="text-foreground">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="secondary"
-              className="bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary"
-            >
-              {tag}
-            </Badge>
-          ))}
+      <div className="flex flex-col justify-between gap-6 p-6 md:col-span-7 md:p-8">
+        <div>
+          <h3 className="mb-3 text-foreground">{title}</h3>
+          <p className="mb-4 text-muted-foreground">{description}</p>
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="rounded-none text-foreground">
+                {tag}
+              </Badge>
+            ))}
+          </div>
         </div>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-primary hover:text-primary/80"
-          asChild
-        >
-          <a href={repoLink} target="_blank" rel="noopener noreferrer">
+        <div className="flex gap-6 text-sm">
+          <a
+            href={repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-foreground underline decoration-signal underline-offset-4"
+          >
             <Github className="mr-2 h-4 w-4" />
             Repo
           </a>
-        </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-primary hover:text-primary/80"
-          asChild
-        >
-          <a href={liveLink} target="_blank" rel="noopener noreferrer">
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-foreground underline decoration-signal underline-offset-4"
+          >
             <ExternalLink className="mr-2 h-4 w-4" />
             Demo
           </a>
-        </Button>
-      </CardFooter>
-    </Card>
+        </div>
+      </div>
+    </article>
   );
 };
 

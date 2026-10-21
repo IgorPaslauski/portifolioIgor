@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -18,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
+        display: ["Syne", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -41,37 +46,31 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent-blue))",
-          foreground: "hsl(var(--accent-blue-foreground))",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card-blue))",
+          DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        signal: {
+          DEFAULT: "hsl(var(--signal))",
+          strong: "hsl(var(--signal-strong))",
+          foreground: "hsl(var(--signal-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary-blue))",
+          primary: "hsl(var(--sidebar-primary))",
           "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent-blue))",
+          accent: "hsl(var(--sidebar-accent))",
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
-        },
-        portfolio: {
-          blue: "#3B82F6", // Azul principal (similar ao azul-500 do Tailwind)
-          "light-blue": "#BFDBFE", // Azul claro
-          "dark-blue": "#1E40AF", // Azul escuro
-        },
-        dark: {
-          background: "#0A192F", // Azul muito escuro para fundo
-          card: "#112240", // Azul médio para cards
-          muted: "#153e75", // Azul mais claro para elementos mutados
-          border: "#1E4976", // Borda azul escuro
         },
       },
       borderRadius: {
