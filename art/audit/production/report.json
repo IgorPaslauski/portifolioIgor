@@ -1,0 +1,144 @@
+{
+  "base": "https://paslauski.com.br",
+  "at": "2026-10-23T14:17:39.190Z",
+  "checks": {
+    "seo": {
+      "title": "Ígor Paslauski | Desenvolvedor Full Stack",
+      "description": "Portfólio profissional de Ígor Paslauski, desenvolvedor full stack especializado em React, Node.js, C# e TypeScript.",
+      "ogTitle": "Ígor Paslauski | Desenvolvedor Full Stack",
+      "themeColor": "#0B0D10",
+      "lang": "pt-BR"
+    },
+    "themeToggle": false,
+    "canvas": true,
+    "progress": {
+      "home": {
+        "t": 0.002,
+        "nav": null
+      },
+      "work": {
+        "t": 0.07,
+        "nav": "Trabalho"
+      },
+      "lab": {
+        "t": 0.627,
+        "nav": "Lab"
+      },
+      "engineering": {
+        "t": 0.823,
+        "nav": "Engineering"
+      },
+      "contact": {
+        "t": 1,
+        "nav": "Contato"
+      }
+    },
+    "lab": {
+      "count": 14,
+      "sample": [
+        "Landing Page Folgen Group",
+        "Portfólio Eduarda",
+        "PortGo"
+      ],
+      "alert": null
+    },
+    "labFilter": [
+      "PortGo"
+    ],
+    "medium": {
+      "error": true,
+      "link": true
+    },
+    "contact": {
+      "email": "mailto:igor.paslauski123@gmail.com",
+      "cvPresent": true,
+      "cvStatus": 200,
+      "linkedin": true,
+      "github": true
+    },
+    "reverse": [
+      {
+        "id": "contact",
+        "t": 1,
+        "nav": "Contato"
+      },
+      {
+        "id": "engineering",
+        "t": 0.823,
+        "nav": "Engineering"
+      },
+      {
+        "id": "lab",
+        "t": 0.627,
+        "nav": "Lab"
+      },
+      {
+        "id": "work",
+        "t": 0.07,
+        "nav": "Trabalho"
+      },
+      {
+        "id": "home",
+        "t": 0.002,
+        "nav": null
+      }
+    ],
+    "demand": {
+      "staticDraws": 0,
+      "demandLikely": true
+    },
+    "anchor#work": {
+      "t": 0.07,
+      "nav": "Trabalho",
+      "hash": "#work"
+    },
+    "anchor#lab": {
+      "t": 0.627,
+      "nav": "Lab",
+      "hash": "#lab"
+    },
+    "anchor#contact": {
+      "t": 1,
+      "nav": "Contato",
+      "hash": "#contact"
+    },
+    "reducedMotion": {
+      "canvas": false,
+      "svg": true
+    },
+    "mobileLab": 14
+  },
+  "static": {
+    "/projects.json": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    },
+    "/navs.json": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    },
+    "/sculpture/monogram.glb": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    },
+    "/cv-igor-paslauski.pdf": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    },
+    "/favicon.ico": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    },
+    "/CNAME": {
+      "ok": false,
+      "error": "TypeError: fetch failed"
+    }
+  },
+  "errors": [
+    "console: Access to fetch at 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@igor.pedroso123' from origin 'https://paslauski.com.br' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "console: Failed to load resource: net::ERR_FAILED"
+  ],
+  "criticalErrors": [
+    "console: Failed to load resource: net::ERR_FAILED"
+  ]
+}
