@@ -1,0 +1,99 @@
+{
+  "base": "http://127.0.0.1:8765",
+  "at": "2026-10-23T14:02:10.861Z",
+  "checks": {
+    "themeToggle": false,
+    "heroHasToggleInHeader": {
+      "buttons": [
+        "Abrir menu"
+      ],
+      "hasSunMoon": false
+    },
+    "lab": {
+      "itemCount": 14,
+      "firstItems": [
+        "Landing Page Folgen GroupLanding page para uma empresa.React · Vite.jsRepoDemo",
+        "Portfólio EduardaPortfólio pessoal desenvolvido com React e Vite.js.React · Vite",
+        "PortGoQuiz de língua portuguesa para o ensino médio.Next.js · TypeScriptRepo",
+        "PhantShoppingLista de compras com login, cadastro, listas e itens.Next.js · Type",
+        "Marisane AlmeidaSite de terapia sistêmica com serviços, agendamento e contato.Re"
+      ],
+      "alert": null,
+      "filterEnabled": true,
+      "hasEmptyFilterMsg": false,
+      "hasUnavailable": false
+    },
+    "labFilter": {
+      "titles": [
+        "PortGo"
+      ]
+    },
+    "navActive": {
+      "work": {
+        "label": "Trabalho",
+        "href": "#work"
+      },
+      "lab": {
+        "label": "Lab",
+        "href": "#lab"
+      },
+      "engineering": {
+        "label": "Engineering",
+        "href": "#engineering"
+      },
+      "contact": {
+        "label": "Contato",
+        "href": "#contact"
+      }
+    },
+    "anchorContact": {
+      "t": 1,
+      "nav": "Contato"
+    },
+    "reverse": [
+      {
+        "id": "contact",
+        "t": 1,
+        "nav": "Contato"
+      },
+      {
+        "id": "engineering",
+        "t": 0.823,
+        "nav": "Engineering"
+      },
+      {
+        "id": "lab",
+        "t": 0.627,
+        "nav": "Lab"
+      },
+      {
+        "id": "work",
+        "t": 0.07,
+        "nav": "Trabalho"
+      }
+    ],
+    "demand": {
+      "staticDraws": 0,
+      "demandLikely": true
+    },
+    "copyLeak": {
+      "experiencesJson": false,
+      "fontesReadme": false,
+      "fontesJson": false
+    },
+    "cv": {
+      "present": true,
+      "status": 200,
+      "ok": true
+    },
+    "mobileThemeToggle": false,
+    "mobileLabCount": 14
+  },
+  "pageErrors": [
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "rawErrorsSample": [
+    "Access to fetch at 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@igor.pedroso123' from origin 'http://127.0.0.1:8765' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED"
+  ]
+}

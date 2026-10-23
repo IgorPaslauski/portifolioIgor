@@ -20,8 +20,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        display: ["Syne", ...defaultTheme.fontFamily.sans],
+        sans: ["Instrument Sans", ...defaultTheme.fontFamily.sans],
+        display: ["Instrument Sans", ...defaultTheme.fontFamily.sans],
+        mono: ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
       },
       colors: {
         border: "hsl(var(--border))",

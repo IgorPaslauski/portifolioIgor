@@ -1,84 +1,60 @@
-@import "@fontsource/syne/latin-700.css";
-@import "@fontsource/syne/latin-800.css";
-@import "@fontsource/dm-sans/latin-400.css";
-@import "@fontsource/dm-sans/latin-500.css";
+@import "@fontsource/instrument-sans/400.css";
+@import "@fontsource/instrument-sans/500.css";
+@import "@fontsource/instrument-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Immersive Engineering — single dark visual system. */
 @layer base {
-  :root {
-    --background: 48 20% 96%;
-    --foreground: 60 4% 8%;
-    --card: 48 16% 93%;
-    --card-foreground: 60 4% 8%;
-    --popover: 48 20% 96%;
-    --popover-foreground: 60 4% 8%;
-    --primary: 14 82% 40%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 45 8% 90%;
-    --secondary-foreground: 60 4% 8%;
-    --muted: 45 8% 90%;
-    --muted-foreground: 40 4% 32%;
-    --accent: 45 10% 92%;
-    --accent-foreground: 60 4% 8%;
-    --destructive: 0 72% 42%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 40 6% 80%;
-    --input: 40 6% 80%;
-    --ring: 14 82% 40%;
-    --signal: 14 100% 50%;
-    --signal-strong: 14 82% 40%;
-    --signal-foreground: 0 0% 100%;
-    --radius: 0px;
-    --sidebar-background: 48 20% 96%;
-    --sidebar-foreground: 60 4% 8%;
-    --sidebar-primary: 14 82% 40%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 45 10% 92%;
-    --sidebar-accent-foreground: 60 4% 8%;
-    --sidebar-border: 40 6% 80%;
-    --sidebar-ring: 14 82% 40%;
-  }
-
+  :root,
   .dark {
-    --background: 60 4% 5%;
-    --foreground: 45 22% 95%;
-    --card: 60 3% 9%;
-    --card-foreground: 45 22% 95%;
-    --popover: 60 3% 9%;
-    --popover-foreground: 45 22% 95%;
-    --primary: 16 100% 62%;
-    --primary-foreground: 60 6% 7%;
-    --secondary: 60 3% 14%;
-    --secondary-foreground: 45 22% 95%;
-    --muted: 60 3% 14%;
-    --muted-foreground: 40 8% 74%;
-    --accent: 60 3% 14%;
-    --accent-foreground: 45 22% 95%;
+    --background: 216 18% 5%; /* #0B0D10 */
+    --foreground: 210 20% 96%; /* #F3F5F7 */
+    --card: 210 18% 8%; /* #11151A */
+    --card-foreground: 210 20% 96%;
+    --popover: 210 18% 8%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 145 78% 71%; /* #78F0A4 */
+    --primary-foreground: 216 18% 5%;
+    --secondary: 210 16% 11%; /* #171C22 */
+    --secondary-foreground: 210 20% 96%;
+    --muted: 210 16% 11%;
+    --muted-foreground: 215 14% 65%; /* #9AA4B2 */
+    --accent: 210 16% 11%;
+    --accent-foreground: 210 20% 96%;
     --destructive: 0 62% 46%;
     --destructive-foreground: 0 0% 100%;
-    --border: 50 3% 18%;
-    --input: 50 3% 18%;
-    --ring: 16 100% 62%;
-    --signal: 16 100% 58%;
-    --signal-strong: 16 100% 62%;
-    --signal-foreground: 60 6% 7%;
-    --sidebar-background: 60 4% 5%;
-    --sidebar-foreground: 45 22% 95%;
-    --sidebar-primary: 16 100% 62%;
-    --sidebar-primary-foreground: 60 6% 7%;
-    --sidebar-accent: 60 3% 14%;
-    --sidebar-accent-foreground: 45 22% 95%;
-    --sidebar-border: 50 3% 18%;
-    --sidebar-ring: 16 100% 62%;
+    --border: 213 18% 17%; /* #232A33 */
+    --input: 213 18% 17%;
+    --ring: 145 78% 71%;
+    --signal: 145 78% 71%;
+    --signal-strong: 145 78% 65%;
+    --signal-foreground: 216 18% 5%;
+    --radius: 0px;
+    --surface: 210 18% 8%;
+    --surface-2: 210 16% 11%;
+    --sidebar-background: 216 18% 5%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 145 78% 71%;
+    --sidebar-primary-foreground: 216 18% 5%;
+    --sidebar-accent: 210 16% 11%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 213 18% 17%;
+    --sidebar-ring: 145 78% 71%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
   }
 
   body {
@@ -97,13 +73,20 @@
   }
 
   h1 {
-    font-size: clamp(2.65rem, 11.2vw, 8.6rem);
-    @apply font-extrabold leading-[0.86];
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    @apply font-medium leading-[0.92];
+    letter-spacing: -0.03em;
   }
 
   h2 {
-    font-size: clamp(2.4rem, 6vw, 5rem);
-    @apply font-bold leading-[0.92];
+    font-size: clamp(2rem, 3.5vw, 3.25rem);
+    @apply font-medium leading-[1.05];
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+    @apply font-medium;
   }
 }
 

@@ -7,7 +7,7 @@
         "description": "Desenvolvimento de aplicações web utilizando tecnologias como HTML, CSS, JavaScript, TypeScript, Angular, PostgreSQL, Sybase, entre outras.",
         "achievements": [
             "Responsável por desenvolver e cuidar do sistema contábil da solução, além da realização de codereview e gerenciamento de backlog",
-            "Realizei conversões de base dados para integrar coma solução da empresa",
+            "Realizei conversões de base de dados para integrar com a solução da empresa",
             "Criei sistemas de integração com APIs governamental (REINF)",
             "Atualizei o sistema de Angular 6 para Angular 15",
             "Melhorei o processo de geração do arquivo do PAD das prefeituras para gerar em 2 minutos no sistema"
@@ -28,19 +28,19 @@
         "role": "Programador JR",
         "company": "Tecnicon Sistemas Gerenciais",
         "period": "Jan 2021 - Out 2022",
-        "description": "Desenvolvimento de sistemas ERP utilizando tecnologias como Java, EJb, HTML/CSS, JavaScript, Sql Server, Firbird, entre outras.",
+        "description": "Desenvolvimento de sistemas ERP utilizando tecnologias como Java, EJB, HTML/CSS, JavaScript, SQL Server, Firebird, entre outras.",
         "achievements": [
             "Construí uma ferramenta de gerenciamento de Smart TVs remotamente e integrado com o sistema para uso interno",
-            "Otimização de processos com transferencia de estoque de produto entre filiais, com uma redução de 2 hrs de processamento para 3 minutos",
+            "Otimização de processos com transferência de estoque de produto entre filiais, com uma redução de 2 hrs de processamento para 3 minutos",
             "Criação e manutenção do sistema de Kanban da empresa, para uso interno e externo"
         ],
         "technologies": [
             "Java",
-            "EJb",
+            "EJB",
             "HTML/CSS",
             "JavaScript",
-            "Sql Server",
-            "Firbird",
+            "SQL Server",
+            "Firebird",
             "CI/CD"
         ]
     }

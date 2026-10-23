@@ -19,8 +19,8 @@ export default function BackToTop() {
         window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
       }}
       aria-label="Voltar ao topo"
-      className={`fixed bottom-16 right-4 z-10 bg-primary p-2 text-primary-foreground transition-opacity ${
-        isVisible ? "opacity-100" : "pointer-events-none opacity-0"
+      className={`fixed bottom-5 right-5 z-10 border border-border bg-background/90 p-2 text-foreground motion-safe:transition-opacity ${
+        isVisible ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
       <ArrowUp />

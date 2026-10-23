@@ -1,33 +1,30 @@
-import React from "react";
+import { useReducedMotion } from "motion/react";
 import Navbar from "../components/navbar/Navbar";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import ProjectsSection from "../components/projects/ProjectsSection";
-import ExperienceSection from "../components/experience/ExperienceSection";
-import CertificationsSection from "../components/certifications/CertificationsSection";
-import SkillsSection from "../components/skills/SkillsSection";
-import ContactSection from "../components/ContactSection";
-import PostsSection from "@/components/medium/PostsSection";
+import Hero from "@/sections/Hero";
+import SelectedWork from "@/sections/SelectedWork";
+import Lab from "@/sections/Lab";
+import Engineering from "@/sections/Engineering";
+import Closing from "@/sections/Closing";
 import BackToTop from "@/components/BackToTop";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { SculptureProvider } from "@/sculpture/SculptureContext";
 
 const Index = () => {
+  const reducedMotion = useReducedMotion() ?? false;
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <AboutSection />
-        <PostsSection />
-        <CertificationsSection />
-        <ContactSection />
-        <WhatsAppButton />
-        <BackToTop />
-      </main>
-    </div>
+    <SculptureProvider reducedMotion={reducedMotion}>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main>
+          <Hero />
+          <SelectedWork />
+          <Lab />
+          <Engineering />
+          <Closing />
+          <BackToTop />
+        </main>
+      </div>
+    </SculptureProvider>
   );
 };
 

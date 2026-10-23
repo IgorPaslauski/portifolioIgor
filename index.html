@@ -7,15 +7,15 @@
   <title>Ígor Paslauski | Desenvolvedor Full Stack</title>
   <meta name="description" content="Portfólio profissional de Ígor Paslauski, desenvolvedor full stack especializado em React, Node.js, C# e TypeScript." />
   <meta name="author" content="Ígor Paslauski Pedroso de Oliveira" />
-  <meta name="theme-color" content="#F6F5F1" />
+  <meta name="theme-color" content="#0B0D10" />
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem("theme");
-        var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var dark = stored === "dark" || ((stored === null || stored === "system") && systemDark);
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+        try { localStorage.removeItem("theme"); } catch (e) {}
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", dark ? "#0C0C0B" : "#F6F5F1");
+        if (meta) meta.setAttribute("content", "#0B0D10");
       } catch (e) {}
     })();
   </script>

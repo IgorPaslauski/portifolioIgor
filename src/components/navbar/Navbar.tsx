@@ -1,21 +1,53 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "../ThemeToggle";
+import { publicUrl } from "@/lib/publicUrl";
 
 type NavItem = { id: string; label: string };
 
-const PRIMARY = ["projects", "experience", "contact"];
+const PRIMARY = ["work", "lab", "engineering", "contact"];
+
+const FALLBACK_NAVS: NavItem[] = [
+  { id: "home", label: "Home" },
+  { id: "work", label: "Trabalho" },
+  { id: "lab", label: "Lab" },
+  { id: "engineering", label: "Engineering" },
+  { id: "contact", label: "Contato" },
+];
+
+/** Section whose top is closest above the spy line; last section wins near page end. */
+function resolveActiveSection(ids: string[]): string {
+  if (ids.length === 0) return "home";
+
+  const scrollBottom = window.scrollY + window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+  if (scrollBottom >= docHeight - 48) {
+    return ids[ids.length - 1];
+  }
+
+  const spy = window.scrollY + Math.min(120, window.innerHeight * 0.22);
+  let current = ids[0];
+
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    if (top <= spy + 1) current = id;
+  }
+
+  return current;
+}
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState("home");
-  const [navs, setNavs] = useState<NavItem[]>([]);
+  const [navs, setNavs] = useState<NavItem[]>(FALLBACK_NAVS);
   const [loading, setLoading] = useState(true);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (id: string) => {
+    setActiveId(id);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById(id)?.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
     if (!isMenuOpen) return;
@@ -30,37 +62,53 @@ const Navbar = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(import.meta.env.VITE_API_URL + "/navs.json")
-      .then((response) => response.json())
-      .then((data: NavItem[]) => setNavs(data))
+    fetch(publicUrl("navs.json"))
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data: NavItem[]) => {
+        if (Array.isArray(data) && data.some((n) => n.id === "engineering")) {
+          setNavs(data);
+        } else {
+          setNavs(FALLBACK_NAVS);
+        }
+      })
+      .catch(() => setNavs(FALLBACK_NAVS))
       .finally(() => setLoading(false));
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const onScrollChrome = () => setScrolled(window.scrollY > 12);
+    onScrollChrome();
+    window.addEventListener("scroll", onScrollChrome, { passive: true });
+    return () => window.removeEventListener("scroll", onScrollChrome);
   }, []);
 
   useEffect(() => {
     if (navs.length === 0) return;
-    const elements = navs
-      .map((nav) => document.getElementById(nav.id))
-      .filter((element): element is HTMLElement => element !== null);
+    const ids = navs.map((nav) => nav.id);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActiveId(visible.target.id);
-      },
-      { rootMargin: "-40% 0px -45% 0px", threshold: [0.15, 0.4] }
-    );
+    const update = () => {
+      const hash = window.location.hash.replace(/^#/, "");
+      // Honor hash only at the very top (fresh load / jump); otherwise scroll position wins.
+      if (hash && ids.includes(hash) && window.scrollY < 8) {
+        setActiveId(hash);
+        return;
+      }
+      setActiveId(resolveActiveSection(ids));
+    };
 
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+    update();
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("hashchange", update);
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("hashchange", update);
+      window.removeEventListener("resize", update);
+    };
   }, [navs]);
 
   useEffect(() => {
@@ -84,57 +132,55 @@ const Navbar = () => {
 
   return (
     <>
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || isMenuOpen ? "bg-background" : "bg-transparent"
-      }`}
-    >
-      <div className="flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
-        <a
-          href="#home"
-          onClick={(event) => onAnchor(event, "home")}
-          className="font-display text-2xl font-extrabold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
-        >
-          Ígor
-        </a>
-
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Atalhos">
-          {loading
-            ? Array.from({ length: 3 }, (_, index) => (
-                <span key={index} className="h-3 w-16 bg-muted" />
-              ))
-            : primary.map((nav) => (
-                <a
-                  key={nav.id}
-                  href={`#${nav.id}`}
-                  onClick={(event) => onAnchor(event, nav.id)}
-                  aria-current={activeId === nav.id ? "true" : undefined}
-                  className={`text-sm tracking-wide underline-offset-[6px] decoration-signal decoration-2 motion-safe:transition-colors hover:text-signal hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal ${
-                    activeId === nav.id ? "text-foreground underline" : "text-foreground/75"
-                  }`}
-                >
-                  {nav.label}
-                </a>
-              ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <button
-            ref={menuButtonRef}
-            type="button"
-            className="grid h-10 w-10 place-items-center border border-foreground/20"
-            aria-expanded={isMenuOpen}
-            aria-controls="site-menu"
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            onClick={() => setIsMenuOpen((open) => !open)}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled || isMenuOpen ? "bg-background" : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
+          <a
+            href="#home"
+            onClick={(event) => onAnchor(event, "home")}
+            className="font-display text-2xl font-extrabold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
-      </div>
+            Ígor
+          </a>
 
-    </header>
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Atalhos">
+            {loading
+              ? Array.from({ length: 4 }, (_, index) => (
+                  <span key={index} className="h-3 w-16 bg-muted" />
+                ))
+              : primary.map((nav) => (
+                  <a
+                    key={nav.id}
+                    href={`#${nav.id}`}
+                    onClick={(event) => onAnchor(event, nav.id)}
+                    aria-current={activeId === nav.id ? "true" : undefined}
+                    className={`text-sm tracking-wide underline-offset-[6px] decoration-signal decoration-2 motion-safe:transition-colors hover:text-signal hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal ${
+                      activeId === nav.id ? "text-foreground underline" : "text-foreground/75"
+                    }`}
+                  >
+                    {nav.label}
+                  </a>
+                ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <button
+              ref={menuButtonRef}
+              type="button"
+              className="grid h-10 w-10 place-items-center border border-foreground/20 lg:hidden"
+              aria-expanded={isMenuOpen}
+              aria-controls="site-menu"
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+              onClick={() => setIsMenuOpen((open) => !open)}
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+      </header>
       {isMenuOpen && (
         <div
           id="site-menu"
@@ -143,22 +189,20 @@ const Navbar = () => {
         >
           <p className="mb-8 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">Índice</p>
           <div className="grid gap-2 sm:grid-cols-2">
-            {loading
-              ? Array.from({ length: 8 }, (_, index) => <span key={index} className="h-12 bg-muted" />)
-              : navs.map((nav, index) => (
-                  <a
-                    key={nav.id}
-                    href={`#${nav.id}`}
-                    onClick={(event) => onAnchor(event, nav.id)}
-                    aria-current={activeId === nav.id ? "true" : undefined}
-                    className="flex items-baseline gap-4 border-b border-border py-3 text-left motion-safe:transition-colors hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
-                  >
-                    <span className="font-mono text-xs text-muted-foreground">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-display text-4xl font-bold sm:text-5xl">{nav.label}</span>
-                  </a>
-                ))}
+            {navs.map((nav, index) => (
+              <a
+                key={nav.id}
+                href={`#${nav.id}`}
+                onClick={(event) => onAnchor(event, nav.id)}
+                aria-current={activeId === nav.id ? "true" : undefined}
+                className="flex items-baseline gap-4 border-b border-border py-3 text-left motion-safe:transition-colors hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+              >
+                <span className="font-mono text-xs text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-display text-4xl font-bold sm:text-5xl">{nav.label}</span>
+              </a>
+            ))}
           </div>
         </div>
       )}

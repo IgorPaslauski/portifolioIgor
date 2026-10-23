@@ -1,10 +1,7 @@
 [
-    { "id": "home", "label": "Home" },
-    { "id": "about", "label": "Sobre" },
-    { "id": "projects", "label": "Projetos" },
-    { "id": "experience", "label": "Experiência" },
-    { "id": "certifications", "label": "Certificações" },
-    { "id": "skills", "label": "Habilidades" },
-    { "id": "posts", "label": "Artigos" },
-    { "id": "contact", "label": "Contato" }
-  ]
+  { "id": "home", "label": "Home" },
+  { "id": "work", "label": "Trabalho" },
+  { "id": "lab", "label": "Lab" },
+  { "id": "engineering", "label": "Engineering" },
+  { "id": "contact", "label": "Contato" }
+]
